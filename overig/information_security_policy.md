@@ -289,11 +289,11 @@ All users, including contractors and vendors with access to {{CompanyName}} syst
 The Incident response plan has to be tested once annually. Copies of this incident response plan is to be made available to all relevant staff members, and take steps to ensure that they understand it and what is expected of them. 
 Employees of the company will be expected to report to the security officer for any security related issues. 
 The {{CompanyName}} security incident response plan is as follows: 
-    1. Each department must report an incident to an member of Incident Response Team. 
-    2. That member of the team receiving the report will advise the Incident Response Team of the incident.
-    3. The Incident Response Team will investigate the incident and assist the potentially compromised department in limiting the exposure of data and in mitigating the risks associated with the incident. 
-    4. The Incident Response Team will resolve the problem to the satisfaction of all parties involved, including reporting the incident and findings to the appropriate parties as necessary. 
-    5. The Incident Response Team will determine if policies and processes need to be updated to avoid a similar incident in the future, and whether additional safeguards are required in the environment where the incident occurred, or for the institution. 
+  1. Each department must report an incident to an member of Incident Response Team. 
+  2. That member of the team receiving the report will advise the Incident Response Team of the incident.
+  3. The Incident Response Team will investigate the incident and assist the potentially compromised department in limiting the exposure of data and in mitigating the risks associated with the incident. 
+  4. The Incident Response Team will resolve the problem to the satisfaction of all parties involved, including reporting the incident and findings to the appropriate parties as necessary. 
+  5. The Incident Response Team will determine if policies and processes need to be updated to avoid a similar incident in the future, and whether additional safeguards are required in the environment where the incident occurred, or for the institution. 
 
 The Incident Response Team: 
   - CTO/CEO 
