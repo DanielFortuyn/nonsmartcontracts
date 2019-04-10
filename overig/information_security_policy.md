@@ -1,6 +1,6 @@
 # Information Security Policy 
 
-{{CompanyName}}
+{{companyName}}
 
 Last change: 04/01/2019 
 
@@ -15,12 +15,12 @@ This Policy Document encompasses all aspects of security surrounding confidentia
 
 ## 2. Information Security Policy 
 
-{{CompanyName}} frequently handles sensitive information. Sensitive Information must have adequate safeguards in place to protect them, to protect privacy, to ensure compliance with various regulations and to guard the future of the organisation. {{CompanyName}} commits to respecting the privacy of all its customers and to protecting any data about customers from outside parties. To this end management are committed to maintaining a secure environment in which to process information so that we can meet these promises. 
+{{companyName}} frequently handles sensitive information. Sensitive Information must have adequate safeguards in place to protect them, to protect privacy, to ensure compliance with various regulations and to guard the future of the organisation. {{companyName}} commits to respecting the privacy of all its customers and to protecting any data about customers from outside parties. To this end management are committed to maintaining a secure environment in which to process information so that we can meet these promises. 
 Employees handling sensitive data should ensure: 
 
   - Handle Company and customer information in a manner that fits with their sensitivity; 
   - Limit personal use of company information and telecommunication systems and ensure it doesn't interfere with your job performance; 
-  - {{CompanyName}} reserves the right to monitor, access, review, audit, copy, store, or delete any electronic communications, equipment, systems and network traffic for any purpose; 
+  - {{companyName}} reserves the right to monitor, access, review, audit, copy, store, or delete any electronic communications, equipment, systems and network traffic for any purpose; 
   - Do not use e-mail, internet and other Company resources to engage in any action that is offensive, threatening, discriminatory, defamatory, slanderous, pornographic, obscene, harassing or illegal; 
   - Do not disclose personal information unless authorised; 
   - Protect sensitive information; 
@@ -34,7 +34,7 @@ We each have a responsibility for ensuring our company's systems and data are pr
 
 ## 3. Acceptable Use Policy 
 
-The Management's intentions for publishing an Acceptable Use Policy are not to impose restrictions that are contrary to {{CompanyName}} established culture of openness, trust and integrity. Management is committed to protecting the employees, partners and the company from illegal or damaging actions by individuals, either knowingly or unknowingly. {{CompanyName}} will maintain an list of devices and personnel with access to such devices as detailed in Appendix B. 
+The Management's intentions for publishing an Acceptable Use Policy are not to impose restrictions that are contrary to {{companyName}} established culture of openness, trust and integrity. Management is committed to protecting the employees, partners and the company from illegal or damaging actions by individuals, either knowingly or unknowingly. {{companyName}} will maintain an list of devices and personnel with access to such devices as detailed in Appendix B. 
 
   - Employees are responsible for exercising good judgment regarding the reasonableness of personal use. 
   - Employees should ensure that they have appropriate credentials and are authenticated for the use of technologies 
@@ -54,13 +54,13 @@ Violation of the standards, policies and procedures presented in this document b
 
 ## 5. Protect Stored Data 
 
-All sensitive data stored and handled by {{CompanyName}} and its employees must be securely protected against unauthorised use at all times. Any sensitive data that is no longer required by {{CompanyName}} for business reasons must be discarded in a secure and irrecoverable manner. 
+All sensitive data stored and handled by {{companyName}} and its employees must be securely protected against unauthorised use at all times. Any sensitive data that is no longer required by {{companyName}} for business reasons must be discarded in a secure and irrecoverable manner. 
 
 ## 6. Information Classification 
 
 Data and media containing data must always be labelled to indicate sensitivity level 
 
-  - Confidential data might include information assets for which there are legal requirements for preventing disclosure or financial penalties for disclosure, or data that would cause severe damage to {{CompanyName}} if disclosed or modified. 
+  - Confidential data might include information assets for which there are legal requirements for preventing disclosure or financial penalties for disclosure, or data that would cause severe damage to {{companyName}} if disclosed or modified. 
   - Internal Use data might include information that the data owner feels should be protected to prevent unauthorized disclosure; 
   - Public data is information that may be freely disseminated. 
 
@@ -70,7 +70,7 @@ Access to sensitive information in both hard and soft media format must be physi
 
   - Employees are responsible for exercising good judgment regarding the reasonableness of personal use. 
   - Employees should ensure that they have appropriate credentials and are authenticated for the use of technologies 
-  - Employees should take all necessary steps to prevent unauthorized access to confidential data which includes cunstomer data. 
+  - Employees should take all necessary steps to prevent unauthorized access to confidential data which includes customer data. 
   - Employees should ensure that technologies should be used and setup in acceptable network locations 
   - Keep passwords secure and do not share accounts. Authorized users are responsible for the security of their passwords and accounts. 
   - Media is defined as any printed or handwritten paper, printed email, back-up drives, computer hard drive, etc. 
@@ -83,10 +83,10 @@ Access to sensitive information in both hard and soft media format must be physi
 
 ## 8. Disposal of Stored Data 
 
-  - All data must be securely disposed of when no longer required by {{CompanyName}}, regardless of the media or application type on which it is stored. 
+  - All data must be securely disposed of when no longer required by {{companyName}}, regardless of the media or application type on which it is stored. 
   - An automatic process must exist to permanently delete on-line data, when no longer required. 
-  - {{CompanyName}} will have procedures for the destruction of hardcopy (paper) materials. These will require that all hardcopy materials are shredded, incinerated or pulped so they cannot be reconstructed. 
-  - {{CompanyName}} will have documented procedures for the destruction of electronic media. These will require: 
+  - {{companyName}} will have procedures for the destruction of hardcopy (paper) materials. These will require that all hardcopy materials are shredded, incinerated or pulped so they cannot be reconstructed. 
+  - {{companyName}} will have documented procedures for the destruction of electronic media. These will require: 
     - All data on electronic media must be rendered unrecoverable when deleted e.g. through degaussing or electronically wiped using military grade secure deletion processes or the physical destruction of the media; 
     - If secure wipe programs are used, the process must define the industry accepted standards followed for secure deletion. 
 
@@ -108,14 +108,14 @@ The policies and procedures outlined below must be incorporated into company pra
   - All inbound and outbound traffic must be restricted to that which is required for the data environment. 
   - All inbound network traffic is blocked by default, unless explicitly allowed and the restrictions have to be documented. 
   - All outbound traffic has to be authorized by management (i.e. what are the whitelisted category of sites that can be visited by the employees) and the restrictions have to be documented 
-  - {{CompanyName}} will have firewalls between any wireless networks and the data environment. 
+  - {{companyName}} will have firewalls between any wireless networks and the data environment. 
   - Disclosure of private IP addresses to external entities must be authorized. 
   - The firewall rules will be reviewed on a six months basis to ensure validity and the firewall has to have clean up rule at the bottom of the rule base. 
   - No direct connections from Internet to the data environment will be permitted. All traffic has to traverse through a firewall. 
 
 ## 11. Password Policy 
 
-All users, including contractors and vendors with access to {{CompanyName}} systems, are responsible for taking the appropriate steps, as outlined below, to select and secure their passwords. 
+All users, including contractors and vendors with access to {{companyName}} systems, are responsible for taking the appropriate steps, as outlined below, to select and secure their passwords. 
 
   - All vendor default accounts and passwords for the systems have to be changed at the time of provisioning the system/device into the company network and all unnecessary services and user/system accounts have to be disabled. 
   - All unnecessary default accounts must be removed or disabled before installing a system on the network. 
@@ -139,7 +139,7 @@ All users, including contractors and vendors with access to {{CompanyName}} syst
 
 ## 12. Anti-virus policy 
 
-  - All machines must be configured to run the latest anti-virus software as approved by {{CompanyName}}. The preferred application to use is Bitdefender Anti-Virus software, which must be configured to retrieve the latest updates to the antiviral program automatically on a daily basis. The antivirus should have periodic scanning enabled for all the systems. 
+  - All machines must be configured to run the latest anti-virus software as approved by {{companyName}}. The preferred application to use is Bitdefender Anti-Virus software, which must be configured to retrieve the latest updates to the antiviral program automatically on a daily basis. The antivirus should have periodic scanning enabled for all the systems. 
   - The antivirus software in use should be cable of detecting all known types of malicious software (Viruses, Trojans, adware, spyware, worms and rootkits) 
   - All removable media (for example usb drives and others) should be scanned for viruses before being used. 
   - Master Installations of the Antivirus software should be setup for automatic updates and periodic scans 
@@ -147,19 +147,19 @@ All users, including contractors and vendors with access to {{CompanyName}} syst
 
 ## 13. Patch Management Policy 
 
-  - All Workstations, servers, software, system components etc. owned by {{CompanyName}} must have up-to-date system security patches installed to protect the asset from known vulnerabilities. 
+  - All Workstations, servers, software, system components etc. owned by {{companyName}} must have up-to-date system security patches installed to protect the asset from known vulnerabilities. 
   - Where ever possible all systems, software must have automatic updates enabled for system patches released from their respective vendors. Security patches have to be installed within one month of release from the respective vendor and have to follow the process in accordance with change control process. 
   - Any exceptions to this process have to be documented. 
 
 ## 14. Remote Access policy 
 
-  - It is the responsibility of {{CompanyName}} employees, contractors, vendors and agents with remote access privileges to company network to ensure that their remote access connection is given the same consideration as the user's on-site connection to {{CompanyName}}. 
+  - It is the responsibility of {{companyName}} employees, contractors, vendors and agents with remote access privileges to company network to ensure that their remote access connection is given the same consideration as the user's on-site connection to {{companyName}}. 
   - Secure remote access must be strictly controlled. Control will be enforced by two factor authentication via one-time password authentication or public/private keys with strong pass- phrases. 
-  - Vendor accounts with access to {{CompanyName}} network will only be enabled during the time period the access is required and will be disabled or removed once access is no longer required. 
+  - Vendor accounts with access to {{companyName}} network will only be enabled during the time period the access is required and will be disabled or removed once access is no longer required. 
   - Remote access connection will be setup to be disconnected automatically after 30 minutes of inactivity 
-  - All hosts that are connected to {{CompanyName}} its internal networks via remote access technologies will be monitored on a regular basis. 
+  - All hosts that are connected to {{companyName}} its internal networks via remote access technologies will be monitored on a regular basis. 
   - All remote access accounts used by vendors or 3rd parties will be revoked if there is no further business justification. 
-  - Vendor accounts with access to the {{CompanyName}} network will only be enabled during the time period the access is required and will be disabled or removed once access is no longer required. 
+  - Vendor accounts with access to the {{companyName}} network will only be enabled during the time period the access is required and will be disabled or removed once access is no longer required. 
 
 ## 15. Change control Process 
 
@@ -236,7 +236,7 @@ All users, including contractors and vendors with access to {{CompanyName}} syst
 
 ## 17. Secure Application development 
   - The Secure Application development policy is a plan of action to guide developers' decisions and actions during the software development lifecycle (SDLC) to ensure software security. This policy aims to be language and platform independent so that it is applicable across all software development projects. 
-  - The adherence to and use of Secure Application Development Coding Policy is a requirement for all software development on {{CompanyName}} information technology systems and trusted contractor sites processing data. 
+  - The adherence to and use of Secure Application Development Coding Policy is a requirement for all software development on {{companyName}} information technology systems and trusted contractor sites processing data. 
   - Each phase of the SDLC is mapped with security activities, as explained below: 
     - Design Identify Design Requirements from security perspective
       - Architecture & Design Reviews 
@@ -250,8 +250,8 @@ All users, including contractors and vendors with access to {{CompanyName}} syst
     - Deployment 
       - Server Configuration Review 
       - Network Configuration Review 
-  - Development of code shall be checked and validated with the most current versions of {{CompanyName}} Coding Standards for Secure Application Development. All code developers shall verify that their code is in compliance with the most recent and approved coding standards and guidelines. 
-  - Only validated code shall be implemented into the {{CompanyName}} production environment. A review and validation ensures that code exhibits fundamental security properties to include correctness, predictability, and attack tolerance. 
+  - Development of code shall be checked and validated with the most current versions of {{companyName}} Coding Standards for Secure Application Development. All code developers shall verify that their code is in compliance with the most recent and approved coding standards and guidelines. 
+  - Only validated code shall be implemented into the {{companyName}} production environment. A review and validation ensures that code exhibits fundamental security properties to include correctness, predictability, and attack tolerance. 
   - Application Code Developers shall: 
     - Ensure code meets the level of confidence that software is free from exploitable code vulnerabilities, regardless of whether they are already designed into the software or inserted later in its life cycle.
     - Ensure code provides predictable execution or justifiable confidence and that the software, when executed, will provide security functionality as intended.
@@ -288,7 +288,7 @@ All users, including contractors and vendors with access to {{CompanyName}} syst
 'Security incident' means any incident (accidental, intentional or deliberate) relating to your communications or information processing systems. The attacker could be a malicious stranger, a competitor, or a disgruntled employee, and their intention might be to steal information or money, or just to damage your company. 
 The Incident response plan has to be tested once annually. Copies of this incident response plan is to be made available to all relevant staff members, and take steps to ensure that they understand it and what is expected of them. 
 Employees of the company will be expected to report to the security officer for any security related issues. 
-The {{CompanyName}} security incident response plan is as follows: 
+The {{companyName}} security incident response plan is as follows: 
   1. Each department must report an incident to an member of Incident Response Team. 
   2. That member of the team receiving the report will advise the Incident Response Team of the incident.
   3. The Incident Response Team will investigate the incident and assist the potentially compromised department in limiting the exposure of data and in mitigating the risks associated with the incident. 
@@ -297,8 +297,8 @@ The {{CompanyName}} security incident response plan is as follows:
 
 The Incident Response Team: 
   - CTO/CEO 
-  - Lead DevOps 
-  - Lead Development 
+  - Lead DevOps
+  - Lead Developer
 
 In response to a systems compromise, the Response Team and designees will: 
 
@@ -323,15 +323,15 @@ In response to a systems compromise, the Response Team and designees will:
 
 ## 21. Access Control Policy 
 
-  - {{CompanyName}} will provide all employees and other users with the information they need to carry out their responsibilities in as effective and efficient manner as possible. 
+  - {{companyName}} will provide all employees and other users with the information they need to carry out their responsibilities in as effective and efficient manner as possible. 
   - The allocation of privilege rights (e.g. local administrator, domain administrator, super-user, root access) shall be restricted and controlled, and authorization provided jointly by the system owner and IT Services. Technical teams shall guard against issuing privilege rights to entire teams to prevent loss of confidentiality. 
   - Access rights will be accorded following the principles of least privilege and need to know. 
   - Every user should attempt to maintain the security of data at its classified level even if technical security mechanisms fail or are absent. 
   - Users electing to place information on digital media or storage devices or maintaining a separate database must only do so where such an action is in accord with the data's classification 
-  - Users are obligated to report instances of non-compliance to {{CompanyName}} 
-  - Access to {{CompanyName}} IT resources and services will be given through the provision of a unique account and complex password. 
+  - Users are obligated to report instances of non-compliance to {{companyName}} 
+  - Access to {{companyName}} IT resources and services will be given through the provision of a unique account and complex password. 
   - Access to Confidential, Restricted and Protected information will be limited to authorised persons whose job responsibilities require it, as determined by the data owner or their designated representative. 
-  - Users are expected to become familiar with and abide by {{CompanyName}} policies, standards and guidelines for appropriate and acceptable usage of the networks and systems. 
+  - Users are expected to become familiar with and abide by {{companyName}} policies, standards and guidelines for appropriate and acceptable usage of the networks and systems. 
   - Access to data is variously and appropriately controlled according to the data classification levels. 
 
 # Appendix A – Agreement to comply 
@@ -342,7 +342,7 @@ ________________________ Employee Name
 
 ________________________ Department 
 
-I agree to take all reasonable precautions to assure that {{CompanyName}} internal information, or information that has been entrusted to {{CompanyName}} by third parties such as customers, will not be disclosed to unauthorised persons. At the end of my employment or contract with {{CompanyName}}, I agree to return all information to which I have had access as a result of my position. I understand that I am not authorised to use sensitive information for my own purposes, nor am I at liberty to provide this information to third parties without the express written consent of the internal manager who is the designated information owner. I have access to a copy of the Information Security Policies, I have read and understand these policies, and I understand how it impacts my job. As a condition of continued employment, I agree to abide by the policies and other requirements found in the security policy. I understand that non- compliance will be cause for disciplinary action up to and including dismissal, and perhaps criminal and/or civil penalties. I also agree to promptly report all violations or suspected violations of information security policies to the designated manager. 
+I agree to take all reasonable precautions to assure that {{companyName}} internal information, or information that has been entrusted to {{companyName}} by third parties such as customers, will not be disclosed to unauthorised persons. At the end of my employment or contract with {{companyName}}, I agree to return all information to which I have had access as a result of my position. I understand that I am not authorised to use sensitive information for my own purposes, nor am I at liberty to provide this information to third parties without the express written consent of the internal manager who is the designated information owner. I have access to a copy of the Information Security Policies, I have read and understand these policies, and I understand how it impacts my job. As a condition of continued employment, I agree to abide by the policies and other requirements found in the security policy. I understand that non- compliance will be cause for disciplinary action up to and including dismissal, and perhaps criminal and/or civil penalties. I also agree to promptly report all violations or suspected violations of information security policies to the designated manager. 
 
 ________________________ Employee Signature 
 
@@ -352,4 +352,4 @@ ________________________ Employee Signature
 
 | Device Name | Owner | Approved Location
 | ------------- |-------------|-----|
-| {{DeviceName}} | {{Owner}} | {{CompanyName}} HQ |
+| {{DeviceName}} | {{Owner}} | {{companyName}} HQ |
