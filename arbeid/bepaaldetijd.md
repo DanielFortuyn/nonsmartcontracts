@@ -1,0 +1,122 @@
+#Arbeidsovereenkomst bepaalde tijd
+
+{{bedrijfsNaam}}
+
+**PARTIJEN**
+
+1. {{bedrijfsNaam}}, met adres {{adres}}, KvK-nummer: {{bedrijfsKvk}}; Hierna: Werkgever; 
+
+en 
+
+2. {{werknemerNaam}}, met adres {{werknemerAdres}}, geboren op {{werknemerGeboortedatum}} in {{werknemerGeboorteplaats}}; ( **Werknemer**); 
+
+Werkgever en Werknemer hierna samen ook **Partijen**; 
+
+**ACHTERGROND**
+
+1. Het bedrijf van Werkgever is actief op de volgende markten: {{bedrijfsMarkten}}; de **Markten **. 
+2. Partijen willen elkaars rechten en verplichtingen vastleggen in deze arbeidsovereenkomst; de **Overeenkomst **. 
+
+**OVEREENKOMST**
+
+## Artikel 1 - Duur
+1. Deze Overeenkomst gaat in op {{ingangsDatum}}. 
+2. Partijen gaan deze Overeenkomst aan voor een bepaalde tijd van {{looptijdOvereenkomst}}. 
+3. Deze Overeenkomst eindigt (zonder dat opzegging is vereist) op {{eindDatumOvereenkomst}}. Werkgever zal een maand voor het einde van deze Overeenkomst aan Werknemer aangeven of deze Overeenkomst zal worden verlengd. 
+4. Partijen kunnen deze Overeenkomst tussentijds schriftelijk opzeggen. Op deze overeenkomst is de wettelijke opzegtermijn van toepassing. 
+
+## Artikel 2 - Salaris en vakantiegeld 
+1. Werknemer heeft recht op een bruto maandsalaris van {{werknemerSalaris}} op fulltime basis, exclusief vakantiegeld (hierna: **Salaris**).
+2. Werkgever zal het salaris betalen op of voor de 25e dag van de kalendermaand.
+3. Werknemer heeft recht op vakantiegeld van 8% over het salaris. Het vakantiegeld wordt in de maand mei uitbetaald. 
+4. Werknemer krijgt elke maand een loonstrookje. Op het loonstrookje staat de samenstelling van het salaris en alle inhoudingen die Werkgever doet.
+5. Werknemer krijgt het loonstrookje digitaal van Werkgever. 
+
+## Artikel 3 - Functie en werktijden
+1. Werknemer werkt als {{werknemerFunctie}}. Werknemer rapporteert aan {{bedrijfsVerantwoordelijke}}, of aan een andere persoon die Werkgever aanwijst. Werknemer moet zijn werkzaamheden goed uitvoeren en hij moet handelen volgens de regels die Werkgever heeft gesteld. 
+2. Werknemer zal andere werkzaamheden verrichten dan bij de Functie horen, als de bedrijfsomstandigheden dit volgens Werkgever vereisen.
+3. Werknemer zal de werkzaamheden verrichten op het kantoor van Werkgever, of op een andere locatie die Werkgever aanwijst. 
+4. De normale werktijd van Werknemer is 40 uur per week. 
+5. Werknemer zal overwerk - buiten de vastgestelde werktijden - verrichten als dat nodig is. 
+
+## Artikel 4 - Vakantie
+1. Werknemer heeft recht op 20 vakantiedagen op fulltime basis per jaar. (12 vakantiedagen op basis van een 24-urige werkweek) 
+2. Vakantiedagen worden in overleg met Werkgever opgenomen. 
+    
+## Artikel 5 - CAO
+Op deze arbeidsovereenkomst is geen cao van toepassing. 
+
+## Artikel 6 - Ziekte
+1. Als Werknemer door ziekte niet in staat is de werkzaamheden te verrichten, meldt Werknemer zich ziek bij Vincent Ulmer of Felix Paulusma. Werknemer moet ook een ziekmelding doen in het geval van ziekte tijdens vakantie. 
+2. Als Werknemer niet werkt wegens ziekte, zal Werkgever zolang deze Overeenkomst voortduurt de eerste 52 weken 100% en de daaropvolgende 52 weken 70% van het salaris doorbetalen, tenzij het Burgerlijk Wetboek anders bepaalt. 
+3. Als Werknemer langer dan drie maanden ziek is, dan zal Werknemer op verzoek van Werkgever de bedrijfseigendommen teruggeven. Werknemer heeft daarbij geen recht op een vergoeding. 
+
+## Artikel 7 - Onkosten 
+1. Werkgever vergoedt de reiskosten die Werknemer maakt voor zijn werkzaamheden.
+2. Werkgever vergoedt de daadwerkelijk gemaakte kosten door Werknemer. Werknemer geeft daarom elke maand een controleerbaar overzicht van gemaakte reiskosten aan Werkgever. 
+
+## Artikel 8 – Secundaire arbeidsvoorwaarden
+1. Lunch (en, indien overwerk verricht wordt, diner) wordt verzorgd door Werkgever. Met toestemming van Werkgever kan Werknemer ook zelf lunch (of diner) verzorgen en laten vergoeden door Werkgever.  
+2. Om de gezondheid van Werknemer te bevorderen stelt Werkgever Werknemer in staat op kosten van Werkgever een fitness abonnement te nemen bij een door Werkgever aangewezen instelling; 
+
+## Artikel 9 - Pensioenregeling
+1. Werkgever doet Werknemer geen aanbod om deel te nemen in een pensioenregeling. 
+2. Werkgever kan op een later moment besluiten Werknemer een aanbod te doen om deel te nemen in een pensioenregeling. Werknemer stemt ermee in dat Werkgever de Werknemer in dat geval elektronisch informeert over de pensioenregeling. 
+
+##Artikel 10 - Werkgeversbijdrage ziektekostenverzekering **
+Werkgever zal enkel de wettelijk verplichte werkgeversbijdrage aan de premie ziektekostenverzekering bijdragen. 
+
+##Artikel 11 - Bedrijfseigendommen van Werkgever
+1. Zaken (zoals computers, telefoons, en gegevensdragers) die Werknemer van Werkgever krijgt, zijn eigendom van Werkgever. 
+2. Werknemer moet met zorg omgaan met de bedrijfseigendommen van Werkgever. 
+3. Werknemer zal op verzoek van Werkgever de bedrijfseigendommen teruggeven aan Werkgever. Werknemer dient in elk geval de bedrijfseigendommen terug te geven op de dag dat deze Overeenkomst eindigt. 
+
+##Artikel 12 - Intellectuele eigendomsrechten
+1. Aan Werkgever komt in binnen- en buitenland het intellectuele eigendomsrecht toe dat voortvloeit uit werkzaamheden van Werknemer, ongeacht of deze werkzaamheden voortvloeien uit zijn functie. Dit recht geldt tijdens deze Overeenkomst en een jaar na afloop daarvan. Werknemer zal alle formaliteiten verrichten om Werkgever in staat te stellen deze rechten te verkrijgen. 
+2. Het bepaalde over intellectuele eigendomsrechten geldt ook voor werken, ontdekkingen en vindingen die binnen een jaar na het einde van deze arbeidsovereenkomst tot stand komen. 
+3. Werknemer mag zich niet maker, ontdekker of uitvinder noemen van bedoelde werken, ontdekkingen en vindingen. 4. Het salaris is ook een vergoeding voor alle ontdekkingen of vindingen van  Werknemer. 
+
+##Artikel 13 - Non-concurrentiebeding
+1. Werknemer zal niet binnen een periode van twee jaar na het einde van de arbeidsovereenkomst werkzaamheden voor een Concurrent verrichten. Partijen verstaan onder **Concurrent **: een onderneming gelijk, gelijksoortig of aanverwant aan het bedrijf van de Werkgever. 
+2. Werknemer zal niet binnen de periode van twee jaar, tijdens en na beëindiging van deze Overeenkomst, alleen of met anderen een Concurrent oprichten. 
+3. Werknemer zal niet binnen de periode van twee jaar, tijdens en na beëindiging van deze Overeenkomst, een financieel belang, of een aandeel bij een Concurrent hebben. 
+
+##Artikel 14 - Relatiebeding
+1. Werknemer zal zonder toestemming van Werkgever voor twee jaar na het einde van de Overeenkomst geen contacten onderhouden of leggen met relaties van Werkgever. 
+2. Werknemer mag tijdens deze Overeenkomst geen relaties van Werkgever benaderen met als doel een zakelijke relatie aan te gaan na het einde van het dienstverband. 
+
+##Artikel 15 - Non-sollicitatiebeding 
+Werknemer zal niet (zonder voorafgaande schriftelijke toestemming van Werkgever) voor een periode van twee jaar na beëindiging van de arbeidsovereenkomst een arbeidsrelatie aangaan met personen die in dienst zijn of tijdens deze Overeenkomst in dienst waren bij Werkgever. Werknemer zal ook geen arbeidsrelatie starten met ondernemingen en personen binnen het concern van Werkgever. 
+
+##Artikel 16 - Geheimhouding
+Werknemer zal alle vertrouwelijke informatie geheimhouden. Partijen verstaan onder 'vertrouwelijke informatie': alle gegevens die niet openbaar zijn en alle gegevens die een vertrouwelijk karakter hebben. 
+
+##Artikel 17 - Boete 
+1. Bij overtreding van de artikelen die Werknemer beperken in zijn werkzaamheden na de Overeenkomst na afloop van deze Overeenkomst, kan Werkgever een boete opleggen aan Werknemer. De boete is een direct opeisbaar bedrag van €10.000,00. Daarnaast betaalt Werknemer aan Werkgever een boete van €500,00 per dag dat de overtreding voortduurt. 
+2. Werkgever houdt daarnaast het recht om een schadevergoeding te vorderen. 
+
+##Artikel 18 - Eenzijdig wijzigingsbeding
+Werkgever kan binnen redelijke grenzen eenzijdige wijzigingen in deze Overeenkomst doorvoeren als hij een zwaarwichtig belang heeft. 
+
+##Artikel 19 - Nietigheid
+Als een deel van deze Overeenkomst nietig of vernietigbaar is, verandert dat niets aan de geldigheid van de rest van de Overeenkomst. Het nietige of vernietigde deel wordt vervangen door een bepaling die zoveel mogelijk de inhoud van de nietige bepaling volgt. 
+
+##Artikel 20 - Slotbepaling 
+1. Alleen schriftelijke wijzigingen op deze overeenkomst zijn geldig. 
+2. Alle bijlagen zijn onderdeel van deze Overeenkomst. 
+3. Deze overeenkomst vervangt alle eerdere overeenkomsten tussen Partijen. 
+
+##Artikel 21 - Toepasselijk recht
+Op deze overeenkomst is het Nederlands recht van toepassing.
+
+##Artikel 21 - Bevoegde rechter
+De rechtbank te Den Haag is exclusief bevoegd in het geval een geschil wordt voorgelegd aan de rechter.
+
+
+Aldus opgemaakt in tweevoud op ({{datum}}) te  {{plaats}},
+
+Ondertekening
+
+| Werkgever | Werknemer | 
+|-------------|-----------| 
+|Handtekening: _______________________________________|Handtekening: _______________________________________| 

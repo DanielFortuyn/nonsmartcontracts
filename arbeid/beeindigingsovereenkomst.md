@@ -2,11 +2,11 @@
 
 ## DE ONDERGETEKENDEN:
 
-1.De besloten vennootschap met beperkte aansprakelijkheid {{bedrijfNaam}} ,gevestigd te {{bedrijfPlaats}} aan de {{bedrijfAdres}}, ten deze rechtsgeldig vertegenwoordigd door {{bedrijfVertegenwoordiger}}, hierna te noemen: "Werkgever";
+De besloten vennootschap met beperkte aansprakelijkheid {{bedrijfNaam}} ,gevestigd te {{bedrijfPlaats}} aan de {{bedrijfAdres}}, ten deze rechtsgeldig vertegenwoordigd door {{bedrijfVertegenwoordiger}}, hierna te noemen: "Werkgever";
 
 En
 
-2. {{werknemerNaam}}, met adres {{werknemerAdres}},
+{{werknemerNaam}}, met adres {{werknemerAdres}},
 
 geboren op {{werknemerGeboortedatum}} in {{werknemerGeboorteplaats}}; "Werknemer";
 
@@ -48,3 +48,9 @@ Deze overeenkomst heeft te gelden als vaststellingsovereenkomst zoals bedoeld in
 3. Aan de onderhavige overeenkomst kunnen geen rechten worden ontleend tot het moment dat beide partijen tot ondertekening zijn overgegaan.
 
 Aldus overeengekomen en in tweevoud getekend te {{Plaats}} op {{Datum}}
+
+Ondertekening
+
+| Werkgever | Werknemer | 
+|-------------|-----------| 
+|Handtekening: _______________________________________|Handtekening: _______________________________________| 
