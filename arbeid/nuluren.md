@@ -6,7 +6,7 @@
 
 en
 
-1. {{employeeName}}, met adres {{employeeAddress}} geboren op {{employeeBirthDate}} in {{employeeBirthLocation}} ;( **Oproepkracht** );
+{{employeeName}}, met adres {{employeeAddress}} geboren op {{employeeBirthDate}} in {{employeeBirthLocation}} ;( **Oproepkracht** );
 
 Werkgever en Oproepkracht hierna samen ook **Partijen** ;
 
