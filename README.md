@@ -13,14 +13,13 @@ In de loop der tijd heb ik besloten om hier een tool van te maken. Waarom vraag 
 ### Overig
 - Eenzijdige geheimhoudingsverklaring (Non-disclosure agreement)
 - Information securtiy policy
+- (persoonlijke) geld lening
 
 ## Disclaimer
-
 Ik draag geen verantwoordelijkheid voor het gebruik van deze docs. Ik heb ze zelf samengesteld op basis van uit boeken of uit templates verkregen informatie.
 
+
 ## Gebruik
-
-
 Een document bestaat uit drie delen
 
 Uitleg
@@ -70,3 +69,5 @@ Draag gerust iets bij. Er zijn oneindig veel overeenkomsten dus ik accepteer zon
 
 Daarnaast kan ik mij voorstellen dat je misschien wilt begrijpen hoe dit werkt. Ik gebruik een stack van nodejs, handlebars, yaml en markdown om dit te laten werken. 
 
+## Meer informatie over mij
+[https://frtn.nl/](DigitalFortune) hier kun je meer informatie over mij en mijn bedrijf vinden. 
