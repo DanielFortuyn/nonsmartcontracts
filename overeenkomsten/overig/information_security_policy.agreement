@@ -1,3 +1,9 @@
+Dit is een template voor een information security policy.
+#-!-#
+companyName: DigitalFortune
+deviceName: Dell XPS 15 Service Tag: XSP1245
+owner: Daniel Fortuyn
+#-!-#
 # Information Security Policy 
 
 {{companyName}}
@@ -352,4 +358,4 @@ ________________________ Employee Signature
 
 | Device Name | Owner | Approved Location
 | ------------- |-------------|-----|
-| {{DeviceName}} | {{Owner}} | {{companyName}} HQ |
+| {{deviceName}} | {{owner}} | {{companyName}} HQ |

@@ -1,3 +1,8 @@
+DEPRECATED: Dit mag niet meer opgenomen ter referentie
+#-!-#
+
+#-!-#
+
 # Oproepcontract: nul uren contract bepaalde tijd
 
 ## PARTIJEN

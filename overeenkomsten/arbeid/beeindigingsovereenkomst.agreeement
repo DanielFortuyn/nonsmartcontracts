@@ -1,0 +1,75 @@
+Bij het beeindigen van een dienstverband is een beeindigingsovereenkomst nodig. Dat 
+
+#-!-#
+partij1:
+  hierna: Werkgever
+  naam: DigitalFortune
+  plaats: Leiden
+  adres: Haarlemmerstraat 100
+  vertegenwoordiger: D.G. Fortuyn
+partij2:
+  hierna: Werknemer
+  naam: D.G.Fortuyn
+  adres: Haarlemmerstraat 100, 2312DP Leiden
+  geboorteDatum: moment('2010-10-10')
+  geboortePlaats: Leiden
+  datumBeginOvereenkomst: moment('2010-10-10')
+functie: Directeur
+salaris: 5000
+beginOvereenkomst: moment('2020-01-01')
+datum: moment()
+vakantiegeld: 1000
+plaats: Leiden
+#-!-#
+# BEËINDIGINGSOVEREENKOMST
+
+## DE ONDERGETEKENDEN:
+
+De besloten vennootschap met beperkte aansprakelijkheid {{werkgever.naam}}, gevestigd te {{werkgever.plaats}} aan de {{werkgever.adres}}, ten deze rechtsgeldig vertegenwoordigd door {{werkgever.vertegenwoordiger}}, hierna te noemen: "{{werkgever.hierna}}";
+
+En
+
+{{werknemer.naam}}, met adres {{werknemer.adres}},
+
+geboren op {{werknemer.geboorteDatum}} in {{werknemer.geboortePlaats}}; "Werknemer";
+
+Ondergetekenden hierna gezamenlijk te noemen: "Partijen";
+
+nemen het volgende in aanmerking:
+
+{{count subarticle}}. Werknemer werkt bij Werkgever op basis van een arbeidsovereenkomst sinds {{werknemer.datumBeginOvereenkomst}} als {{werknemer.functie}}.
+{{count subarticle}}. Het laatstgenoten salaris van Werknemer is &euro; {{werknemerSalaris}} bruto per maand. 
+{{count subarticle}}. Op {{datum}} heeft Werkgever aan Werknemer de wens geuit tot beëindiging van het dienstverband te willen komen.
+{{count subarticle}}. Partijen hebben dientengevolge besloten de arbeidsovereenkomst met wederzijds goedvinden te beëindigen. 
+{{count subarticle}}. Partijen zien met het aangaan van deze overeenkomst af van alle overige afspraken die eventueel zouden bestaan danwel zouden hebben bestaan.
+
+## KOMEN ALS VOLGT OVEREEN:
+
+### Artikel {{count article}}. Beëindiging Arbeidsovereenkomst
+{{count subarticle}}. Partijen beëindigen met ingang van 2019-05-01 de arbeidsovereenkomst met wederzijds goedvinden. 
+{{count subarticle}}. Werknemer heeft een bedenktijd van veertien dagen na het tekenen van deze overeenkomst om de overeenkomst te herroepen. 
+
+### Artikel {{count article}}. Eindafrekening
+
+{{count subarticle}}. {{datum}} opgebouwde,doch niet genoten, vakantiedagen worden bij einde van de arbeidsovereenkomst in geld uitgekeerd.
+{{count subarticle}}. Tegelijk met de laatste salarisbetaling, zal Werkgever aan Werknemer het opgebouwde recht aan vakantietoeslag {{vakantiegeld}} uitbetalen. 
+
+### Artikel {{count article}} Communicatie
+
+{{count subarticle}}. Werkgever zal binnen haar organisatie de mededeling doen dat de dienstbetrekking vanwege bedrijfseconomische redenen met Werknemer is beëindigd. Overigens zullen partijen binnen de organisatie van Werkgever geheimhouding betrachten over de inhoud van deze overeenkomst.
+{{count subarticle}}. Werkgever zal het UWV werkbedrijf desgevraagd informeren overeenkomstig haar wettelijke informatieverplichting. 
+{{count subarticle}}. Werkgever verstrekt een positief getuigschrift aan werknemer.
+
+### Artikel {{count article}} Kwalificatie overeenkomst
+
+Deze overeenkomst heeft te gelden als vaststellingsovereenkomst zoals bedoeld in artikel 7:900 BW. 
+
+### Artikel {{count article}} Slotbepalingen
+
+{{count subarticle}}. Werknemer verklaart dat hij bij de ondertekening van deze overeenkomst in staat was om zijn wil te bepalen.
+{{count subarticle}}. Op deze overeenkomst is Nederlands recht van toepassing. 
+{{count subarticle}}. Aan de onderhavige overeenkomst kunnen geen rechten worden ontleend tot het moment dat beide partijen tot ondertekening zijn overgegaan.
+
+Aldus overeengekomen en in tweevoud getekend te {{plaats}} op {{datum}}
+
+{{> Ondertekening}}

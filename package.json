@@ -1,0 +1,19 @@
+{
+  "name": "nonsmartcontracts",
+  "version": "1.0.0",
+  "description": "simple contract templating tool",
+  "main": "src/index.js",
+  "repository": "git@github.com:DanielFortuyn/nonsmartcontracts.git",
+  "author": "Daniel Fortuyn <daniel@fortuyn.nl>",
+  "license": "GNU GPLv3",
+  "private": false,
+  "dependencies": {
+    "fuzzy": "^0.1.3",
+    "handlebars": "^4.7.6",
+    "inquirer": "^7.2.0",
+    "inquirer-autocomplete-prompt": "^1.0.2",
+    "marked": "^1.1.0",
+    "moment": "^2.26.0",
+    "yamljs": "^0.3.0"
+  }
+}

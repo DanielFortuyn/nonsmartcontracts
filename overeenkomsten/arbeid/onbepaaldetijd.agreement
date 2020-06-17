@@ -1,20 +1,43 @@
-#Arbeidsovereenkomst bepaalde tijd
+Arbeidsovereenkomst onbepaalde tijd
+#-!-#
+partij1:
+  hierna: Werkgever
+  naam: DigitalFortune
+  plaats: Leiden
+  adres: Haarlemmerstraat 100
+  vertegenwoordiger: D.G. Fortuyn
+  verantwoordelijke: D.G. Fortuyn
+partij2:
+  hierna: Werknemer
+  naam: D.G.Fortuyn
+  adres: Haarlemmerstraat 100, 2312DP Leiden
+  geboorteDatum: moment('2010-10-10')
+  geboortePlaats: Leiden
+  datumBeginOvereenkomst: moment('2010-10-10')
+  salaris: 5000
+  functie: Directeur
+looptijdOvereenkomst: 1 jaar
+eindDatumOvereenkomst: moment('2020-10-10')
+datum: moment('2020-10-10')
+plaats: Leiden
+#-!-#
+# Arbeidsovereenkomst bepaalde tijd
 
-{{bedrijfsNaam}}
+{{werkgever.naam}}
 
 **PARTIJEN**
 
-{{bedrijfsNaam}}, met adres {{adres}}, KvK-nummer: {{bedrijfsKvk}}; Hierna: Werkgever; 
+{{werkgever.naam}}, met adres {{werkgever.adres}}, KvK-nummer: {{werkgever.kvk}}; Hierna: Werkgever; 
 
 en 
 
-{{werknemerNaam}}, met adres {{werknemerAdres}}, geboren op {{werknemerGeboortedatum}} in {{werknemerGeboorteplaats}}; ( **Werknemer**); 
+{{werknemer.naam}}, met adres {{werknemer.adres}}, geboren op {{werknemer.geboorteDatum}} in {{werknemer.geboortePlaats}}; ( **Werknemer**); 
 
 Werkgever en Werknemer hierna samen ook **Partijen**; 
 
 **ACHTERGROND**
 
-1. Het bedrijf van Werkgever is actief op de volgende markten: {{bedrijfsMarkten}}; de **Markten **. 
+1. Het bedrijf van Werkgever is actief op de volgende markten: {{werkgever.markten}}; de **Markten **. 
 2. Partijen willen elkaars rechten en verplichtingen vastleggen in deze arbeidsovereenkomst; de **Overeenkomst **. 
 
 **OVEREENKOMST**
@@ -25,14 +48,14 @@ Werkgever en Werknemer hierna samen ook **Partijen**;
 3. Partijen kunnen deze Overeenkomst tussentijds schriftelijk opzeggen. Op deze overeenkomst is de wettelijke opzegtermijn van toepassing. 
 
 ## Artikel 2 - Salaris en vakantiegeld 
-1. Werknemer heeft recht op een bruto maandsalaris van {{werknemerSalaris}} op fulltime basis, exclusief vakantiegeld (hierna: **Salaris**).
+1. Werknemer heeft recht op een bruto maandsalaris van {{werknemer.salaris}} op fulltime basis, exclusief vakantiegeld (hierna: **Salaris**).
 2. Werkgever zal het salaris betalen op of voor de 25e dag van de kalendermaand.
 3. Werknemer heeft recht op vakantiegeld van 8% over het salaris. Het vakantiegeld wordt in de maand mei uitbetaald. 
 4. Werknemer krijgt elke maand een loonstrookje. Op het loonstrookje staat de samenstelling van het salaris en alle inhoudingen die Werkgever doet.
 5. Werknemer krijgt het loonstrookje digitaal van Werkgever. 
 
 ## Artikel 3 - Functie en werktijden
-1. Werknemer werkt als {{werknemerFunctie}}. Werknemer rapporteert aan {{bedrijfsVerantwoordelijke}}, of aan een andere persoon die Werkgever aanwijst. Werknemer moet zijn werkzaamheden goed uitvoeren en hij moet handelen volgens de regels die Werkgever heeft gesteld. 
+1. Werknemer werkt als {{werknemer.Functie}}. Werknemer rapporteert aan {{werkgever.verantwoordelijke}}, of aan een andere persoon die Werkgever aanwijst. Werknemer moet zijn werkzaamheden goed uitvoeren en hij moet handelen volgens de regels die Werkgever heeft gesteld. 
 2. Werknemer zal andere werkzaamheden verrichten dan bij de Functie horen, als de bedrijfsomstandigheden dit volgens Werkgever vereisen.
 3. Werknemer zal de werkzaamheden verrichten op het kantoor van Werkgever, of op een andere locatie die Werkgever aanwijst. 
 4. De normale werktijd van Werknemer is 40 uur per week. 
@@ -46,7 +69,7 @@ Werkgever en Werknemer hierna samen ook **Partijen**;
 Op deze arbeidsovereenkomst is geen cao van toepassing. 
 
 ## Artikel 6 - Ziekte
-1. Als Werknemer door ziekte niet in staat is de werkzaamheden te verrichten, meldt Werknemer zich ziek bij Vincent Ulmer of Felix Paulusma. Werknemer moet ook een ziekmelding doen in het geval van ziekte tijdens vakantie. 
+1. Als Werknemer door ziekte niet in staat is de werkzaamheden te verrichten, meldt Werknemer zich ziek bij {{werkgever.verantwoordelijke}}. Werknemer moet ook een ziekmelding doen in het geval van ziekte tijdens vakantie. 
 2. Als Werknemer niet werkt wegens ziekte, zal Werkgever zolang deze Overeenkomst voortduurt de eerste 52 weken 100% en de daaropvolgende 52 weken 70% van het salaris doorbetalen, tenzij het Burgerlijk Wetboek anders bepaalt. 
 3. Als Werknemer langer dan drie maanden ziek is, dan zal Werknemer op verzoek van Werkgever de bedrijfseigendommen teruggeven. Werknemer heeft daarbij geen recht op een vergoeding. 
 

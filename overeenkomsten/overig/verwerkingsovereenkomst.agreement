@@ -1,0 +1,10 @@
+Uitleg:
+
+Een Verwerkingsovereenkomst wordt gesloten tussen twee rechtspersonen. Het is primair gericht op het vastleggen van de regels rondom het uitwisselen van data.
+#-!-#
+partij1:
+    hierna: Verwerker
+partij2: 
+    hierna: Verantwoordelijke
+#-!-#
+# Verwerkingsovereenkomst
