@@ -53,7 +53,7 @@ Iedere overeenkomst heeft partijen. Iedere overeenkomst geeft partijen vaak gema
 
 Als je bij een partij de hierna optie definieerd worden de variabelen ook aan deze naam gehangen en zijn ze via die naam beschikbaar. 
 
-`
+```YAML
 partij1:
   hierna: lener
   naam: jaap
@@ -62,7 +62,7 @@ partij1:
 partij1.naam == jaap // true
 lener.naam == jaap // true
 lener.hierna == lener // true
-`
+```
 
 ## Enthousiast?
 Draag gerust iets bij. Er zijn oneindig veel overeenkomsten dus ik accepteer zonder meer PR's van mensen die een overeenkomst toe willen voegen. 
@@ -70,4 +70,4 @@ Draag gerust iets bij. Er zijn oneindig veel overeenkomsten dus ik accepteer zon
 Daarnaast kan ik mij voorstellen dat je misschien wilt begrijpen hoe dit werkt. Ik gebruik een stack van nodejs, handlebars, yaml en markdown om dit te laten werken. 
 
 ## Meer informatie over mij
-[https://frtn.nl/](DigitalFortune) hier kun je meer informatie over mij en mijn bedrijf vinden. 
+[DigitalFortune](https://frtn.nl/) hier kun je meer informatie over mij en mijn bedrijf vinden. 
