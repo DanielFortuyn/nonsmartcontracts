@@ -21,16 +21,16 @@ Ik draag geen verantwoordelijkheid voor het gebruik van deze docs. Ik heb ze zel
 
 ## Gebruik
 Een document bestaat uit drie delen
-
-Uitleg
-#-!-#
+```
+Uitleg  
+#-!-#  
 Variabelen
 #-!-#
 Overeenkomst template
-
+```
 ieder bestand met de .agreement extensie moet op die manier opgebouwd zijn. 
 
-Vooralsnog is het noodzakelijk om html characters te gebruiken. Zoals &euro; <pre>&euro;</pre>
+Vooralsnog is het noodzakelijk om html characters te gebruiken. Zoals `&euro;` `<pre>&euro;</pre>`
 
 ## Installatie
 
@@ -46,7 +46,7 @@ Vooralsnog is het noodzakelijk om html characters te gebruiken. Zoals &euro; <pr
 Voor variabelen gebruiken we camelCase in de taal van de overeenkomst. Ze kunnen gedefinieerd worden in de tweede sectie van de .agreement file. Dit doen we met YAML waarvan de syntax zo eenvoudig is dat zelfs juristen het kunnen snappen. 👼
 
 ### Datum / tijd
-Om datum en tijd gemakkelijk correct weer te kunnen geven gebruiken we daarvoor de volgende notitie: moment('2020-06-20') of voor het moment van genereren simpelweg moment()
+Om datum en tijd gemakkelijk correct weer te kunnen geven gebruiken we daarvoor de volgende notitie: `moment('2020-06-20')` of voor het moment van genereren simpelweg `moment()`
 
 ### Partijen
 Iedere overeenkomst heeft partijen. Iedere overeenkomst geeft partijen vaak gemakkelijk te hanteren namen zoals hierna: lener / uitlener. Om de contracten leesbaar te houden kunnen we deze alias gebruiken om geneste variabelen aan te roepen. In de variabelen definitie werkt dit als volgt:
