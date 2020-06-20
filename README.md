@@ -49,13 +49,27 @@ Voor variabelen gebruiken we camelCase in de taal van de overeenkomst. Ze kunnen
 sleutel: waarde
 sleutels:
   a: b
-  b: c
+  postcode: 2311CR
+lener: 
+  naam: DigitalFortune
+  geboorteDatum: 2010-10-10
+  adres: Breestraat 16, 2311CR
+  woonplaats: Leiden
 ```
 
 ```javascript
-sleutel == 'waarde' // true
-sleutels.a == 'b' // true
+sleutel == 'waarde'   // true
+sleutels.a == 'b'     // true
 ```
+
+In de files werkt het dan uiteindelijk als volgt: 
+
+```Markdown
+{{lener.naam}}, geboren op {{lener.geboorteDatum}}, wonende aan de {{lener.adres}} te {{lener.woonplaats}}, verder lener genoemd,
+```
+
+#### Overerving
+Let op! Als variabelen in een partial en in de agreement file dezelfde waarde hebben overschrijven de variabelen uit het contract de variabelen uit de partial.
 
 ### Datum / tijd
 Om datum en tijd gemakkelijk correct weer te kunnen geven gebruiken we daarvoor de volgende notitie: `moment('2020-06-20')` of voor het moment van genereren simpelweg `moment()`
@@ -69,12 +83,14 @@ Als je bij een partij de hierna optie definieerd worden de variabelen ook aan de
 partij1:
   hierna: lener
   naam: jaap
-
-
-partij1.naam == jaap // true
-lener.naam == jaap // true
+```
+```Javascipt
+partij1.naam == jaap  // true
+lener.naam == jaap    // true
 lener.hierna == lener // true
 ```
+
+
 
 ## Enthousiast?
 Draag gerust iets bij. Er zijn oneindig veel overeenkomsten dus ik accepteer zonder meer PR's van mensen die een overeenkomst toe willen voegen. 

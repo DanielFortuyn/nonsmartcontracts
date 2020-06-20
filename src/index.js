@@ -130,7 +130,7 @@ let helpers = {
         let parts = file.split(split);        
         
         if(parts.length == 3) {
-            this.data = {...helpers.fixData(parts[1]), ...this.data};
+            this.data = {...this.data, ...helpers.fixData(parts[1])};
             return parts[2];
         }        
         return file;
