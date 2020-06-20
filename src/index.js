@@ -81,7 +81,7 @@ let helpers = {
         const partialPath = 'partials/';
         for await (const p of this.walk(partialPath)) {
             let name = p.replace(partialPath,'').replace('.partial','');
-            Handlebars.registerPartial(name,  fs.readFileSync(p, 'utf8'));
+            Handlebars.registerPartial(name,  this.parseFile(p, 'utf8'));
         }        
     },
     registerAgreements: async function() {
@@ -110,15 +110,18 @@ let helpers = {
         }
         return dataObject;
     },
+    setCaseData: function(key, data)  {
+        this.data[key] = data;
+        this.data[key.toLowerCase] = data;
+    },
     fixData: function(inputData) {
         dataObject = YAML.parse(inputData);
         dataObject = helpers.fixMoment(dataObject);
-
         if('partij1' in dataObject && 'hierna' in dataObject.partij1) {
-            dataObject[dataObject.partij1.hierna] = dataObject.partij1;
+            this.setCaseData(dataObject.partij1.hierna, dataObject.partij1);
         }
         if('partij2' in dataObject && 'hierna' in dataObject.partij2) {
-            dataObject[dataObject.partij2.hierna] = dataObject.partij2;
+            this.setCaseData(dataObject.partij2.hierna, dataObject.partij2);
         }
         return dataObject;
     },
@@ -127,26 +130,24 @@ let helpers = {
         let parts = file.split(split);        
         
         if(parts.length == 3) {
-            this.data = helpers.fixData(parts[1]);
-            return Handlebars.compile(parts[2]);
+            this.data = {...helpers.fixData(parts[1]), ...this.data};
+            return parts[2];
         }        
-        return Handlebars.compile(file);
+        return file;
     },
     mergeFiles: function(template)  {
         let pre = Handlebars.compile(fs.readFileSync('templates/pre.handlebars', 'utf8'));
         let post = Handlebars.compile(fs.readFileSync('templates/post.handlebars','utf8' ));
-
         return pre(this.data) + marked(template(this.data)) + post(this.data);
     }
 }
-
 
 let main = async function() {
     try {
         await helpers.init();
         let answers  = await helpers.askAgreement();
         
-        let template = helpers.parseFile(answers.agreement.path);
+        let template = Handlebars.compile(helpers.parseFile(answers.agreement.path));
         helpers.data.answers = answers;
 
         fs.writeFileSync('output/'+answers.agreement.name+'.html', helpers.mergeFiles(template ));
