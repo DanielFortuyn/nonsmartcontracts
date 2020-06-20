@@ -43,7 +43,19 @@ Vooralsnog is het noodzakelijk om html characters te gebruiken. Zoals `&euro;` `
 
 ## Variabelen
 
-Voor variabelen gebruiken we camelCase in de taal van de overeenkomst. Ze kunnen gedefinieerd worden in de tweede sectie van de .agreement file. Dit doen we met YAML waarvan de syntax zo eenvoudig is dat zelfs juristen het kunnen snappen. 👼
+Voor variabelen gebruiken we camelCase in de taal van de overeenkomst. Ze kunnen gedefinieerd worden in de tweede sectie van zowel de .agreement als de .partial files. Dit doen we met YAML waarvan de syntax zo eenvoudig is dat zelfs juristen het kunnen snappen. 👼
+
+```YAML
+sleutel: waarde
+sleutels:
+  a: b
+  b: c
+```
+
+```javascript
+sleutel == 'waarde' // true
+sleutels.a == 'b' // true
+```
 
 ### Datum / tijd
 Om datum en tijd gemakkelijk correct weer te kunnen geven gebruiken we daarvoor de volgende notitie: `moment('2020-06-20')` of voor het moment van genereren simpelweg `moment()`
