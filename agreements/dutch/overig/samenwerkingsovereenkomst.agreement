@@ -17,8 +17,8 @@ partij2:
 ## {{count article}}. Titel
 Samenwerkingsovereenkomst behorende bij het project {{projectNaam}} 
 ## {{count article}}. Ondergetekenden
-{{subArticleCount}}.	Deelnemer {{deelnemer1.naam}}, tevens aanvrager, gevestigd en kantoor houdende in {{deelnemer1.plaats}} ten deze vertegenwoordigd door {{deelnemer1.vertegenwoordiger}} hierna te noemen: {{deelnemer1.hierna}}
-{{subArticleCount}}.	Deelnemer {{deelnemer2.naam}}, tevens aanvrager, gevestigd en kantoor houdende in {{deelnemer2.plaats}} ten deze vertegenwoordigd door {{deelnemer2.vertegenwoordiger}} hierna te noemen: {{deelnemer2.hierna}}
+{{subcount count}}.	Deelnemer {{partij1.naam}}, tevens aanvrager, gevestigd en kantoor houdende in {{partij1.plaats}} ten deze vertegenwoordigd door {{partij1.vertegenwoordiger}} hierna te noemen: {{partij1.hierna}}
+{{subcount count}}.	Deelnemer {{partij2.naam}}, tevens aanvrager, gevestigd en kantoor houdende in {{partij2.plaats}} ten deze vertegenwoordigd door {{partij2.vertegenwoordiger}} hierna te noemen: {{partij2.hierna}}
 
 ## {{count article}}. Overwegende 
 overwegende dat de deelnemers gezamenlijk het project {{projectName}} uitvoeren; 
@@ -32,7 +32,7 @@ overwegende dat de deelnemers gezamenlijk het project {{projectName}} uitvoeren;
  
 
 ## {{count article}}. Doel van het samenwerkingsverband
-Het doel van {{projectNaam}} is het delen en het inzichtelijk maken van informatie over de klant- en/of patientreis ten behoeve van het data gedreven innoveren in de zorg. 
+Het doel van {{projectNaam}} is het delen en het inzichtelijk maken van informatie over de klant- en/of patiëntreis ten behoeve van het data gedreven innoveren in de zorg. 
 
 ## {{count article}}. Uitvoering van de samenwerking
 De deelnemers zullen samenwerken bij de uitvoering van het project {{projectNaam}}. Deze samenwerking vereist wederkerigheid. Zodra toegang tot inzichten en data verschaft wordt ontstaat de verplichting gelijkwaardige data ter beschikking van dit project te stellen. 
