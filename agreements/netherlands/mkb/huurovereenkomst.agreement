@@ -1,0 +1,11 @@
+Placeholder;
+
+Deze gaan we uitwerken; hulp is gewenst 👍
+#-!-#
+partij1:
+    hierna: Aannemer
+    naam:
+partij2:
+    naam: Aangever
+#-!-#
+{{partij1.hierna}} en {{partij2.hierna}}

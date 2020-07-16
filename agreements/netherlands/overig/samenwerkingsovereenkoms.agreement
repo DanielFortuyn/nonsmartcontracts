@@ -1,0 +1,55 @@
+Ruwe opzet voor een Samenwerkingsovereenkomst
+#-!-#
+projectNaam:
+partij1:
+  naam: DigitalFortune
+  plaats: Leiden
+  vertegenwoordiger: D.G. Fortuyn
+  hierna: Deelnemer 1
+partij2:
+  naam: DigitalFortune
+  plaats: Leiden
+  vertegenwoordiger: D.G. Fortuyn
+  hierna: Deelnemer 2
+#-!-#
+# Samenwerkingsovereenkomst behorende bij {{projectNaam}}
+
+## {{count article}}. Titel
+Samenwerkingsovereenkomst behorende bij het project {{projectNaam}} 
+## {{count article}}. Ondergetekenden
+{{subArticleCount}}.	Deelnemer {{deelnemer1.naam}}, tevens aanvrager, gevestigd en kantoor houdende in {{deelnemer1.plaats}} ten deze vertegenwoordigd door {{deelnemer1.vertegenwoordiger}} hierna te noemen: {{deelnemer1.hierna}}
+{{subArticleCount}}.	Deelnemer {{deelnemer2.naam}}, tevens aanvrager, gevestigd en kantoor houdende in {{deelnemer2.plaats}} ten deze vertegenwoordigd door {{deelnemer2.vertegenwoordiger}} hierna te noemen: {{deelnemer2.hierna}}
+
+## {{count article}}. Overwegende 
+overwegende dat de deelnemers gezamenlijk het project {{projectName}} uitvoeren; 
+
+## {{count article}}. Definities
+| Begrip   | Definitie   |
+|---|---|
+| Deelnemer | Een natuurlijke persoon of rechtspersoon die deelneemt in een samenwerkingsverband  |
+| Samenwerkingsverband  | Een geen rechtspersoonlijkheid bezittend verband, bestaande uit ten minste twee, niet in een groep verbonden natuurlijke personen of rechtspersonen, onder wie ten minste één ondernemer;  |
+| Project  | Een planmatig geheel van activiteiten  |
+ 
+
+## {{count article}}. Doel van het samenwerkingsverband
+Het doel van {{projectNaam}} is het delen en het inzichtelijk maken van informatie over de klant- en/of patientreis ten behoeve van het data gedreven innoveren in de zorg. 
+
+## {{count article}}. Uitvoering van de samenwerking
+De deelnemers zullen samenwerken bij de uitvoering van het project {{projectNaam}}. Deze samenwerking vereist wederkerigheid. Zodra toegang tot inzichten en data verschaft wordt ontstaat de verplichting gelijkwaardige data ter beschikking van dit project te stellen. 
+
+## {{count article}} Uitgangspunten
+Elke deelnemer verkrijgt voor de duur van het project toegang tot data, inzichten en werkwijzen van dit project. 
+Geen van de deelnemers is zonder toestemming van alle andere deelnemers gerechtigd verkregen data, inzichten of werkwijzen met derden te delen.
+Elke deelnemer zet zich actief in om een goede samenwerking met de andere deelnemers te realiseren en om zijn werk zorgvuldig en tijdig uit te voeren.
+
+## {{count article}} Bescherming en gebruik van kennis, exploitatie van de projectresultaten
+De kennis die tijdens het project wordt gegenereerd, zal door alle betrokkenen mogen worden gebruikt, mits het de belangen van één van de deelnemers niet schaadt.
+
+## {{count article}}. Publicatie
+Geen van de deelnemers zal de resultaten van het project openbaar maken of openbaar laten maken zonder voorafgaande schriftelijke toestemming van de andere deelnemers. 
+
+## {{count article}}. Einde samenwerking 
+Ieder van de deelnemers kan het project drie maanden na schriftelijke kennisgeving het project verlaten. Door een deelnemer ingebrachte data, inzichten en werkwijzen blijven ondanks het door de deelnemer verlaten van het project onderdeel hiervan. Het recht van de verlatende deelnemer op gebruik en inzage van data, werkwijze en inzichten komt direct na kennisgeving te vervallen. Ondanks het verlaten van het project blijven reeds ontstane verplichtingen in stand. 
+
+{{> toepasselijkRecht}}
+{{> ondertekening }}

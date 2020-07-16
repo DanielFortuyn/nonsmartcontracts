@@ -9,6 +9,8 @@ const YAML = require('yamljs');
 var fuzzy = require('fuzzy');
 var inquirer = require('inquirer');
 const { template } = require('handlebars');
+const agreementPath = 'agreements/';
+
 inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'));
 
 const split = '#-!-#';
@@ -85,7 +87,6 @@ let helpers = {
         }        
     },
     registerAgreements: async function() {
-        const agreementPath = 'overeenkomsten/';
         for await (const p of this.walk(agreementPath)) {
             if(p.includes('.agreement')) {
                 this.agreements.push({
