@@ -14,10 +14,11 @@ const agreementPath = 'agreements/';
 inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'));
 
 const split = '#-!-#';
-
 let helpers = {
     agreements: [],
     data: [],
+    method: 'inquirer',
+    questions: [],
     init: async function() {        
         await this.registerPartials();
         await this.registerAgreements();
@@ -89,9 +90,11 @@ let helpers = {
     registerAgreements: async function() {
         for await (const p of this.walk(agreementPath)) {
             if(p.includes('.agreement')) {
+                let shortName = p.replace('.agreement','').replace(agreementPath, '')
                 this.agreements.push({
                     value: { path: p, name: p.replace('.agreement','').replace(agreementPath, '').replace('/','.')},
-                    name: p.replace('.agreement','').replace(agreementPath, '').replace('/','.'),
+                    name: shortName.replace('/','.'),
+                    key: shortName.split('/')[shortName.split('/').length-1],
                     short: p
                 });
             }
@@ -115,7 +118,7 @@ let helpers = {
         this.data[key] = data;
         this.data[key.toLowerCase] = data;
     },
-    fixData: function(inputData) {
+    fixData: async function(inputData) {
         dataObject = YAML.parse(inputData);
         dataObject = helpers.fixMoment(dataObject);
         if('partij1' in dataObject && 'hierna' in dataObject.partij1) {
@@ -124,7 +127,56 @@ let helpers = {
         if('partij2' in dataObject && 'hierna' in dataObject.partij2) {
             this.setCaseData(dataObject.partij2.hierna, dataObject.partij2);
         }
-        return dataObject;
+        let result = await this.traverseData(dataObject);
+        dataObject = result;
+
+        this.handleQuestions();
+    },
+    handleQuestions: function() {
+        return inquirer.prompt(this.questions);
+    },
+    mapType: function (type) {
+        if(type == 'bool') {
+            return 'confirm'
+        }
+        return type || 'text';
+    },
+    traverseData: async function(obj, path = '') {
+        for (const [key, val] of Object.entries(obj)) {
+            if(obj[key].question) {
+                this.questions.push({
+                    'name': key,
+                    'message': obj[key].question || key,
+                    'question': obj[key],
+                    'type': this.mapType(obj[key].type),
+                    'path': path,
+                    'depends': obj[key].depends || [],
+                    'when': function(currentAnswers) {
+                        let shouldAsk = true;
+                        if(obj[key].depends) {
+                            obj[key].depends.forEach(function(item) {
+                                if(typeof currentAnswers[item] != undefined) {
+                                    if(currentAnswers[item] == false) {
+                                        shouldAsk = false;
+                                    }
+                                }
+                            });
+                        }   
+                        return shouldAsk;
+                    }
+                });
+            }        
+            if (typeof obj[key] === 'object') {
+                this.traverseData(obj[key], path + '.' + key);
+            }
+        }
+        return obj;
+    },
+    handleQuestion: async function(name, questionObject)  {
+        return await inquirer.prompt({
+            name: name,
+            message: questionObject.question
+        });
     },
     parseFile: function(path) {
         let file = fs.readFileSync(path, 'utf8');
@@ -150,6 +202,8 @@ let main = async function() {
         
         let template = Handlebars.compile(helpers.parseFile(answers.agreement.path));
         helpers.data.answers = answers;
+
+        let path =  'output/'+answers.agreement.name+'.html'
 
         fs.writeFileSync('output/'+answers.agreement.name+'.html', helpers.mergeFiles(template ));
     } catch(e) {

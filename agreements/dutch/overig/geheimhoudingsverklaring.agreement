@@ -1,6 +1,10 @@
 Een geheimhoudingsovereenkomst verplicht een ontvanger bepaalde informatie geheim te houden.
 #-!-#
 partij1:
+  naam:
+    question: Hoe heet de verstrekker van informatie?
+  plaats:
+    question: Waar is de verstrekker gevestigd?
   hierna: verstrekker
 partij2:
   hierna: ontvanger
