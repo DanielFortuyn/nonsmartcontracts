@@ -9,7 +9,6 @@ import OutputProvider from './providers/output.js';
 
 dotenv.config();
 let e = process.env;
-
 const agreementPath = 'agreements/';
 const split = e.SPLITTER || '#-!-#'
 

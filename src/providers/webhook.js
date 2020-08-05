@@ -3,9 +3,8 @@ import path from 'path'
 import dotenv from 'dotenv';
 import express from 'express';
 import PubSub from 'pubsub-js'
-
+dotenv.config();
 let e = process.env;
-
 const port = e.PORT || 8080;
 
 class WebhookProvider {
