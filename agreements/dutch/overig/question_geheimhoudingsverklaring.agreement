@@ -1,0 +1,77 @@
+Een geheimhoudingsovereenkomst verplicht een ontvanger bepaalde informatie geheim te houden.
+#-!-#
+eenzijdig:
+  question: Is dit een eenzijdige overeenkomst?
+  type: bool
+  default: true
+  list: 
+    - Ja:true
+    - Nee:false
+partij1:
+  rechtspersoon:
+    question: Is de verstrekken van informatie een rechtspersoon?
+    type: bool
+    options: 
+        - Ja:true
+        - Nee:false
+  kvk:
+    question: Wat is het kvk-nummer van de verstrekker?
+    depends:
+        - rechtspersoon
+  naam:
+    question: Hoe heet de verstrekker van informatie?
+  plaats:
+    question: Waar is de verstrekker gevestigd?
+  hierna: verstrekker
+partij2:
+  hierna: ontvanger
+projectOmschrijving: Het ontwikkelen van een prototype op het gebied van chat. 
+doelVerstrekking: Het verkennen van een samenwerking met DigitalFortune
+datum: moment()
+boete: 5000
+duur: 5
+plaats: Leiden
+#-!-#
+
+# Geheimhoudingsovereenkomst
+
+## eenzijdige informatieverschaffing
+
+## Partijen
+De partijen, {{verstrekker}} (hierna: Verstrekker) en {{ontvanger}} (hierna: Ontvanger)
+
+komen het volgende overeen:
+
+## Artikel {{count article}}. 
+Ontvanger stemt erin toe dat hij door Verstrekker, wordt voorzien van vertrouwelijke informatie (hierna: de Informatie) betreffende:
+
+{{projectOmschrijving}}
+
+Het doel van het verstrekken van deze informatie is:
+
+{{doelVerstrekking}} 
+
+
+## Artikel {{count article}}. Geheimhouding
+Ontvanger zal alle voornoemde informatie die hem door Verstrekker of door haar aangewezen personen is of zal worden verstrekt behandelen als vertrouwelijke informatie die hij derhalve voor derden strikt geheim zal houden.
+
+## Artikel {{count article}}. Geheimhouding binnen organisatie
+Ontvanger zal de Informatie uitsluitend bekend maken aan zijn werknemers voor zover deze daarvan kennis moeten nemen voor het realiseren van het bovenomschreven doel. Ontvangerzal zijn geheimhoudingsplicht ten aanzien van de Informatie integraal opleggen aan deze werknemers, die daartoe een afschrift van deze overeenkomst zullen ondertekenen.
+
+## Artikel {{count article}}. Termijn
+Ontvanger is tot geheimhouding van de Informatie gehouden voor de duur van {{duur}} jaren na de dag waarop de betreffende Informatie door Verstrekker is verstrekt, of totdat de verstrekte gegevens van openbare bekendheid zijn geworden, buiten toedoen of nalaten van Ontvanger. Hij is echter niet tot geheimhouding verplicht betreffende die delen van de door Verstrekker  verstrekte Informatie waarvan hij ten genoegen van Verstrekker  kan aantonen dat deze reeds van openbare bekendheid waren dan wel reeds in zijn bezit waren voordat deze Informatie van Verstrekker werd ontvangen, dan wel via een derde, niet tot geheimhouding verplichte partij in zijn bezit zijn gekomen.
+
+## Artikel {{count article}}. Overdracht eigendom & rechten
+Ontvanger verplicht zich de Informatie op geen enkele wijze, in gewijzigde noch in ongewijzigde vorm, in exploitatie te nemen of toe te passen voor enig ander doel dan hierboven omschreven, zonder voorafgaande schriftelijke toestemming van Verstrekker. Indien het gebruik van de Informatie door Ontvanger resulteert in rechten van intellectuele eigendom of soortgelijke aanspraken zal Ontvanger deze rechten en/of aanspraken om niet overdragen aan Verstrekker.
+
+## Artikel {{count article}}. Octrooi en patent
+Ontvanger zal geen octrooi aanvragen noch enig andere aanspraak maken, waar ook ter wereld, met betrekking tot de aan hem verstrekte Informatie en hij zal niemand in de gelegenheid stellen dit te doen, tenzij met voorafgaande schriftelijke toestemming van Verstrekker of tenzij de octrooiaanvrage of de aanspraak betrekking heeft op informatie waarvan Ontvanger ten genoegen van Verstrekker kan aantonen dat hij over deze informatie beschikte voordat hij door Verstrekker was geïnformeerd of de beschikking kreeg door een derde, niet tot geheimhouding verplichte partij.
+
+## Artikel {{count article}}. Looptijd 
+Verstrekker is gerechtigd op ieder moment te besluiten geen nadere Informatie te verstrekken en alle reeds verstrekte informatie op eisen. Met inachtneming van het voorgaande is deze overeenkomst aangegaan voor Onbepaalde tijd, ingaande op {{datum}}. Na afloop van deze overeenkomst zullen de bepalingen in de artikelen 4, 5, 6, deze zin van 7, 8 en 9 van toepassing blijven totdat de laatste termijn van 5 jaar welke ingevolge artikel 5 tijdens de duur van de overeenkomst is gaan lopen, is verstreken. Voorts zal Ontvanger ieder gebruik van de hem verstrekte schriftelijke terstond bij afloop van de overeenkomst staken en de schriftelijk verstrekte Informatie aan Verstrekker retourneren.
+
+## Artikel {{count article}}. Boete
+Indien Ontvanger de verplichtingen in deze overeenkomst niet of niet volledig nakomt, zal hij door dit enkele feit per gebeurtenis aan Verstrekker een onmiddellijk opeisbare en niet voor rechterlijke matiging vatbare boete groot {{boete}} verschuldigd zijn, onverminderd het recht van Verstrekker op volledige schadevergoeding.
+
+{{> toepasselijkRecht}}
+{{> ondertekening}}
