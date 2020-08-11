@@ -19,7 +19,6 @@ class Application {
         this.smooch = new SmoochAdapter();
         this.dataProvider = new DataProvider();
 
-        this.output = new OutputProvider();
 
         this.userState = {};
         this.userCurrentQuestion = {};
@@ -52,11 +51,13 @@ class Application {
             });
         }
     }
-    questionDone(topic, userId) {
-        console.log("DONE", this.userState[userId]);
-        this.smooch.sendMessage(userId, "We zijn klaar en genereren je contract! 👍")
 
-        let md = this.output.compileMd(userId, this.userState[userId]);
+    questionDone(topic, userId) {
+        let md = ""
+        console.log("DONE", this.userState[userId]);
+        this.output = new OutputProvider();
+        this.smooch.sendMessage(userId, "We zijn klaar en genereren je contract! 👍")
+        // let md = this.output.compileMd(userId, this.userState[userId]);
         let html = this.output.compileHtml(userId, this.userState[userId]);
         let htmlUrl =  e.APPLICATION_URL + '/' + html;
         let mdUrl = e.APPLICATION_URL + '/' + md;
@@ -119,12 +120,15 @@ class Application {
 
     }
     async startAskingQuestions(topic,data) {
-        this.parser = new AgreementParser(data.agreement);
+        let outputProvider = new OutputProvider();
+        this.parser = new AgreementParser();
+        await this.parser.parseFile(data.agreement);
         this.userState[data.userId] = {
             data: await this.dataProvider.fixData(this.parser.data),
             userId: data.userId,
             agreement: data.agreement,
-            agreementText: this.parser.agreementText
+            agreementText: this.parser.agreementText,
+            agreementTemplate: outputProvider.loadTemplate(this.parser.agreementText)
         };
         PubSub.publish('ready.to.ask', data.userId);
     }

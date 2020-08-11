@@ -5,25 +5,30 @@ import marked from 'marked';
 import fs from 'fs'
 import YAML from 'yaml'
 
+dotenv.config();
+
 let e = process.env;
-let split = e.SPLIT || "#-!-#";
+let split = e.SPLITTER || "#-!-#";
 
 class Agreement {
-    constructor(path) {
+    constructor() {
         this.data = {}
-        this.agreementText = this.parseFile(path);
+        this.agreementText = ''
     }
     loadPartials() {
 
     }
-    parseFile(path) {
-        let file = fs.readFileSync(path, 'utf8');
-        let parts = file.split(split);        
+    async parseFile(path) {
+        let file = await fs.readFileSync(path, 'utf8');
+        let parts = file.split(split);    
+        console.log("SPLITTER", split, parts.length);
         if(parts.length == 3) {
             this.data = this.parseData(parts[1]);
-            return parts[2];
+            this.agreementText =  parts[2];
+            return this.agreementText
         }        
-        return file;
+        this.agreementText = file;
+        return this.agreementText
     }
     parseData(part) {
         this.data = YAML.parse(part);

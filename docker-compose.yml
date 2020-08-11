@@ -6,6 +6,8 @@ services:
         volumes:
             # - .:/usr/src/app
             - output:/usr/src/output
+        ports:
+            - 8844:8844
 
 volumes:
     output:

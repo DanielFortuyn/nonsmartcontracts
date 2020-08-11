@@ -14,15 +14,6 @@ partij1:
     options: 
         - Ja:true
         - Nee:false
-  kvk:
-    question: Wat is het kvk-nummer van de verstrekker?
-    depends:
-        - rechtspersoon
-  naam:
-    question: Hoe heet de verstrekker van informatie?
-  plaats:
-    question: Waar is de verstrekker gevestigd?
-  hierna: verstrekker
 partij2:
   hierna: ontvanger
 projectOmschrijving: Het ontwikkelen van een prototype op het gebied van chat. 

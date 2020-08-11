@@ -3,14 +3,23 @@ import fs from 'fs';
 import path from 'path';
 import marked from 'marked';
 import md5 from 'md5';
+import PubSub from 'pubsub-js'
+import DataProvider from './data.js';
+import dotenv from 'dotenv'
 
+dotenv.config();
 let e = process.env;
-const split = e.split;
+const splittert = e.SPLITTER;
 
 class Output {
-    constructor() {
+    constructor(template) {
+        this.partials = {}
+        this.dataProvider = new DataProvider();
         this.registerHelpers();
-        this.registerPartials();
+    }
+    async  loadTemplate(template) {
+        await this.registerPartials();
+        this.registerHelpers()
     }
     registerHelpers() {
         let article = 1;
@@ -32,48 +41,63 @@ class Output {
             else if (d.isFile()) yield entry;
         }
     }
-    parseFile(p) {
+    async parseFile(name, p) {
         let file = fs.readFileSync(p, 'utf8');
-        let parts = file.split(split);        
+        let parts = file.split(splittert);        
         
         if(parts.length == 3) {
-            this.data = {...this.data, ...helpers.fixData(parts[1])};
+            this.partials[name] = await this.dataProvider.fixData(parts[1]);
             return parts[2];
         }        
         return file;
     }
-    compile(userId,data) {
-        let tpl = Handlebars.compile(data.agreementText);
-        let result = tpl(data.data);
-        console.log("RESULT", result);
-        return result;
+    compile(data) {
+        console.log(typeof data.agreementText);
+        let compiled = Handlebars.compile(data.agreementText);
+        // compiled(data.data);
+        // for (var name in Handlebars.partials) {
+        //     var partial = Handlebars.partials[name]
+        //     if (typeof partial === 'function') {
+        //         // add these questions
+        //       console.log('Using partial' + name);
+        //       console.log("DATA", this.partials[name]);
+        //     } else {
+        //         console.log('Not using ' + name);
+        //     }
+        // }
+        // console.log(compiled(data.data))
+        console.log(typeof data.data);
+        return compiled(data.data)
     }
     getFileName(data) {
         return md5(JSON.stringify(data.data));
     }
-    compileHtml(userId, data) {
-        let filename = this.getFileName(data) +'.html';
-        let template = this.compile(userId, data);
-        let output = this.mergeFiles(template, data.data)
+    async compileHtml(userId, data) {
+        let filename = await this.getFileName(data) +'.html';
+        let template = await this.compile(data);
+        let output =await this.mergeFiles(template, data.data)
         fs.writeFileSync('output/' + filename, output);
         return filename;
     }
     compileMd(userId, data) {
         let filename = this.getFileName(data) +'.md';
-        let markdown = this.compile(userId,data);
+        let markdown = this.compile(data);
         fs.writeFileSync('output/'+ filename, markdown);
         return filename;
     }
-    mergeFiles(markdown, data)  {
+     mergeFiles(markdown, data)  {
         let pre = Handlebars.compile(fs.readFileSync('templates/pre.handlebars', 'utf8'));
         let post = Handlebars.compile(fs.readFileSync('templates/post.handlebars','utf8' ));
-        return pre(this.data) + marked(markdown) + post(this.data);
+        return pre(data) + marked(markdown) + post(data);
     }
     async registerPartials() {
         const partialPath = 'partials/';
         for await (const p of this.walk(partialPath)) {
             let name = p.replace(partialPath,'').replace('.partial','');
-            Handlebars.registerPartial(name,  this.parseFile(p, 'utf8'));
+            let parse = await this.parseFile(name, p);
+            console.log(typeof parse)
+            console.log(parse);
+            Handlebars.registerPartial(name, parse);
         }        
     }
 }
