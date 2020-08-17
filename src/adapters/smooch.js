@@ -1,8 +1,8 @@
 import SmoochCore from 'smooch-core';
 import dotenv from 'dotenv';
+import {config}  from '../providers/config.js';
 
-dotenv.config();
-const e = process.env;
+const e = config.env;
 
 class SmoochAdapter {
     constructor() {

@@ -19,7 +19,11 @@ var _pubsubJs = _interopRequireDefault(require("pubsub-js"));
 
 var _data = _interopRequireDefault(require("./data.js"));
 
-var _dotenv = _interopRequireDefault(require("dotenv"));
+var _file = _interopRequireDefault(require("../parsers/file.js"));
+
+var _config = require("./config.js");
+
+var _partial = _interopRequireDefault(require("../container/partial.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -55,24 +59,23 @@ function _asyncGeneratorDelegate(inner, awaitWrap) { var iter = {}, waiting = fa
 
 function _asyncIterator(iterable) { var method; if (typeof Symbol !== "undefined") { if (Symbol.asyncIterator) { method = iterable[Symbol.asyncIterator]; if (method != null) return method.call(iterable); } if (Symbol.iterator) { method = iterable[Symbol.iterator]; if (method != null) return method.call(iterable); } } throw new TypeError("Object is not async iterable"); }
 
-_dotenv["default"].config();
-
-var e = process.env;
+var e = _config.config.env;
 var splittert = e.SPLITTER;
 
 var Output = /*#__PURE__*/function () {
-  function Output(template) {
+  function Output() {
     _classCallCheck(this, Output);
 
+    this.registerPartials();
     this.partials = {};
     this.dataProvider = new _data["default"]();
-    this.registerHelpers();
+    this.parser = new _file["default"]();
   }
 
   _createClass(Output, [{
-    key: "loadTemplate",
+    key: "init",
     value: function () {
-      var _loadTemplate = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(template) {
+      var _init = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -91,11 +94,11 @@ var Output = /*#__PURE__*/function () {
         }, _callee, this);
       }));
 
-      function loadTemplate(_x2) {
-        return _loadTemplate.apply(this, arguments);
+      function init() {
+        return _init.apply(this, arguments);
       }
 
-      return loadTemplate;
+      return init;
     }()
   }, {
     key: "registerHelpers",
@@ -279,18 +282,36 @@ var Output = /*#__PURE__*/function () {
         }, _callee3, this);
       }));
 
-      function parseFile(_x3, _x4) {
+      function parseFile(_x2, _x3) {
         return _parseFile.apply(this, arguments);
       }
 
       return parseFile;
     }()
   }, {
+    key: "preProcess",
+    value: function preProcess(agreement) {
+      var compiled = _handlebars["default"].compile(agreement.text);
+
+      compiled({});
+
+      for (var name in _handlebars["default"].partials) {
+        var partial = _handlebars["default"].partials[name];
+
+        if (typeof partial === 'function') {
+          // add these questions
+          this.partials[name].questions.forEach(function (element) {
+            agreement.addQuestion(element);
+          });
+        }
+      }
+
+      return compiled;
+    }
+  }, {
     key: "compile",
     value: function compile(data) {
-      console.log(_typeof(data.agreementText));
-
-      var compiled = _handlebars["default"].compile(data.agreementText); // compiled(data.data);
+      // compiled(data.data);
       // for (var name in Handlebars.partials) {
       //     var partial = Handlebars.partials[name]
       //     if (typeof partial === 'function') {
@@ -302,65 +323,38 @@ var Output = /*#__PURE__*/function () {
       //     }
       // }
       // console.log(compiled(data.data))
-
-
       console.log(_typeof(data.data));
       return compiled(data.data);
     }
   }, {
     key: "getFileName",
     value: function getFileName(data) {
-      return (0, _md["default"])(JSON.stringify(data.data));
+      return (0, _md["default"])(JSON.stringify(data));
     }
   }, {
     key: "compileHtml",
-    value: function () {
-      var _compileHtml = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(userId, data) {
-        var filename, template, output;
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                _context4.next = 2;
-                return this.getFileName(data);
+    value: function compileHtml(userId, data) {
+      this.registerHelpers();
 
-              case 2:
-                _context4.t0 = _context4.sent;
-                filename = _context4.t0 + '.html';
-                _context4.next = 6;
-                return this.compile(data);
+      var compiled = _handlebars["default"].compile(data.text);
 
-              case 6:
-                template = _context4.sent;
-                _context4.next = 9;
-                return this.mergeFiles(template, data.data);
+      var filename = this.getFileName(data.data) + '.html';
+      var template = compiled(data);
+      var output = this.mergeFiles(template, data.data);
 
-              case 9:
-                output = _context4.sent;
+      _fs["default"].writeFileSync('output/' + filename, output);
 
-                _fs["default"].writeFileSync('output/' + filename, output);
-
-                return _context4.abrupt("return", filename);
-
-              case 12:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4, this);
-      }));
-
-      function compileHtml(_x5, _x6) {
-        return _compileHtml.apply(this, arguments);
-      }
-
-      return compileHtml;
-    }()
+      return filename;
+    }
   }, {
     key: "compileMd",
     value: function compileMd(userId, data) {
+      this.registerHelpers();
+
+      var compiled = _handlebars["default"].compile(data.text);
+
       var filename = this.getFileName(data) + '.md';
-      var markdown = this.compile(data);
+      var markdown = compiled(data);
 
       _fs["default"].writeFileSync('output/' + filename, markdown);
 
@@ -378,98 +372,97 @@ var Output = /*#__PURE__*/function () {
   }, {
     key: "registerPartials",
     value: function () {
-      var _registerPartials = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+      var _registerPartials = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
         var partialPath, _iteratorNormalCompletion2, _didIteratorError2, _iteratorError2, _iterator2, _step2, _value2, p, name, parse;
 
-        return regeneratorRuntime.wrap(function _callee5$(_context5) {
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
           while (1) {
-            switch (_context5.prev = _context5.next) {
+            switch (_context4.prev = _context4.next) {
               case 0:
                 partialPath = 'partials/';
                 _iteratorNormalCompletion2 = true;
                 _didIteratorError2 = false;
-                _context5.prev = 3;
+                _context4.prev = 3;
                 _iterator2 = _asyncIterator(this.walk(partialPath));
 
               case 5:
-                _context5.next = 7;
+                _context4.next = 7;
                 return _iterator2.next();
 
               case 7:
-                _step2 = _context5.sent;
+                _step2 = _context4.sent;
                 _iteratorNormalCompletion2 = _step2.done;
-                _context5.next = 11;
+                _context4.next = 11;
                 return _step2.value;
 
               case 11:
-                _value2 = _context5.sent;
+                _value2 = _context4.sent;
 
                 if (_iteratorNormalCompletion2) {
-                  _context5.next = 24;
+                  _context4.next = 23;
                   break;
                 }
 
                 p = _value2;
                 name = p.replace(partialPath, '').replace('.partial', '');
-                _context5.next = 17;
-                return this.parseFile(name, p);
+                _context4.next = 17;
+                return this.parser.parseFile(name, p);
 
               case 17:
-                parse = _context5.sent;
-                console.log(_typeof(parse));
-                console.log(parse);
+                parse = _context4.sent;
+                this.partials[name] = new _partial["default"](name, parse.text, parse.data);
 
-                _handlebars["default"].registerPartial(name, parse);
+                _handlebars["default"].registerPartial(name, parse.text);
 
-              case 21:
+              case 20:
                 _iteratorNormalCompletion2 = true;
-                _context5.next = 5;
+                _context4.next = 5;
                 break;
 
-              case 24:
-                _context5.next = 30;
+              case 23:
+                _context4.next = 29;
                 break;
 
-              case 26:
-                _context5.prev = 26;
-                _context5.t0 = _context5["catch"](3);
+              case 25:
+                _context4.prev = 25;
+                _context4.t0 = _context4["catch"](3);
                 _didIteratorError2 = true;
-                _iteratorError2 = _context5.t0;
+                _iteratorError2 = _context4.t0;
 
-              case 30:
-                _context5.prev = 30;
-                _context5.prev = 31;
+              case 29:
+                _context4.prev = 29;
+                _context4.prev = 30;
 
                 if (!(!_iteratorNormalCompletion2 && _iterator2["return"] != null)) {
-                  _context5.next = 35;
+                  _context4.next = 34;
                   break;
                 }
 
-                _context5.next = 35;
+                _context4.next = 34;
                 return _iterator2["return"]();
 
-              case 35:
-                _context5.prev = 35;
+              case 34:
+                _context4.prev = 34;
 
                 if (!_didIteratorError2) {
-                  _context5.next = 38;
+                  _context4.next = 37;
                   break;
                 }
 
                 throw _iteratorError2;
 
+              case 37:
+                return _context4.finish(34);
+
               case 38:
-                return _context5.finish(35);
+                return _context4.finish(29);
 
               case 39:
-                return _context5.finish(30);
-
-              case 40:
               case "end":
-                return _context5.stop();
+                return _context4.stop();
             }
           }
-        }, _callee5, this, [[3, 26, 30, 40], [31,, 35, 39]]);
+        }, _callee4, this, [[3, 25, 29, 39], [30,, 34, 38]]);
       }));
 
       function registerPartials() {

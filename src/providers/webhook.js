@@ -20,6 +20,7 @@ class WebhookProvider {
         this.app.listen(port, () => console.log(`Lexr telegram listening at http://localhost:${port}`))
     }
     inboundHandler(smoochMessage) {
+        console.log(smoochMessage.trigger);
         PubSub.publish(smoochMessage.trigger, {
             userId: this.getUserId(smoochMessage),  
             message: smoochMessage

@@ -5,19 +5,21 @@ import marked from 'marked';
 import md5 from 'md5';
 import PubSub from 'pubsub-js'
 import DataProvider from './data.js';
-import dotenv from 'dotenv'
+import FileParser from '../parsers/file.js'
+import {config} from './config.js'
+import Partial from '../container/partial.js'
 
-dotenv.config();
-let e = process.env;
+let e = config.env;
 const splittert = e.SPLITTER;
 
 class Output {
-    constructor(template) {
+    constructor() {
+        this.registerPartials();
         this.partials = {}
         this.dataProvider = new DataProvider();
-        this.registerHelpers();
+        this.parser = new FileParser();
     }
-    async  loadTemplate(template) {
+    async init() {
         await this.registerPartials();
         this.registerHelpers()
     }
@@ -51,9 +53,21 @@ class Output {
         }        
         return file;
     }
+    preProcess(agreement) {
+        let compiled = Handlebars.compile(agreement.text);
+        compiled({});
+        for (var name in Handlebars.partials) {
+            var partial = Handlebars.partials[name]
+            if (typeof partial === 'function') {
+                // add these questions
+                this.partials[name].questions.forEach(element => {
+                    agreement.addQuestion(element);
+                });
+            }
+        }
+        return compiled
+    }
     compile(data) {
-        console.log(typeof data.agreementText);
-        let compiled = Handlebars.compile(data.agreementText);
         // compiled(data.data);
         // for (var name in Handlebars.partials) {
         //     var partial = Handlebars.partials[name]
@@ -70,18 +84,22 @@ class Output {
         return compiled(data.data)
     }
     getFileName(data) {
-        return md5(JSON.stringify(data.data));
+        return md5(JSON.stringify(data));
     }
-    async compileHtml(userId, data) {
-        let filename = await this.getFileName(data) +'.html';
-        let template = await this.compile(data);
-        let output =await this.mergeFiles(template, data.data)
+    compileHtml(userId, data) {
+        this.registerHelpers();
+        let compiled = Handlebars.compile(data.text);
+        let filename = this.getFileName(data.data) +'.html';
+        let template = compiled(data);
+        let output = this.mergeFiles(template, data.data)
         fs.writeFileSync('output/' + filename, output);
         return filename;
     }
     compileMd(userId, data) {
+        this.registerHelpers();
+        let compiled = Handlebars.compile(data.text);
         let filename = this.getFileName(data) +'.md';
-        let markdown = this.compile(data);
+        let markdown = compiled(data);
         fs.writeFileSync('output/'+ filename, markdown);
         return filename;
     }
@@ -94,10 +112,9 @@ class Output {
         const partialPath = 'partials/';
         for await (const p of this.walk(partialPath)) {
             let name = p.replace(partialPath,'').replace('.partial','');
-            let parse = await this.parseFile(name, p);
-            console.log(typeof parse)
-            console.log(parse);
-            Handlebars.registerPartial(name, parse);
+            let parse = await this.parser.parseFile(name, p);
+            this.partials[name] = new Partial(name, parse.text, parse.data);
+            Handlebars.registerPartial(name, parse.text);
         }        
     }
 }

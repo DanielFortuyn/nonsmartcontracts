@@ -5,17 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+var _pubsubJs = _interopRequireDefault(require("pubsub-js"));
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -32,17 +24,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var DataProvider = /*#__PURE__*/function () {
   function DataProvider() {
     _classCallCheck(this, DataProvider);
+
+    _pubsubJs["default"].subscribe('parser.found.data', this.fixData);
   }
 
   _createClass(DataProvider, [{
     key: "fixData",
     value: function () {
-      var _fixData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(dataObject) {
+      var _fixData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(wrapper) {
+        var userId, dataObject;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                dataObject = this.fixMoment(dataObject); // if('partij1' in dataObject && 'hierna' in dataObject.partij1) {
+                userId = wrapper.userId;
+                dataObject = this.fixMoment(wrapper.data); // if('partij1' in dataObject && 'hierna' in dataObject.partij1) {
                 //     this.setCaseData(dataObject.partij1.hierna, dataObject.partij1);
                 // }
                 // if('partij2' in dataObject && 'hierna' in dataObject.partij2) {
@@ -51,7 +47,7 @@ var DataProvider = /*#__PURE__*/function () {
 
                 return _context.abrupt("return", this.traverseData(dataObject));
 
-              case 2:
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -115,67 +111,48 @@ var DataProvider = /*#__PURE__*/function () {
     key: "traverseData",
     value: function () {
       var _traverseData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(obj) {
-        var _this = this;
-
         var path,
             questions,
-            _loop,
-            _i,
-            _Object$entries,
             _args2 = arguments;
-
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 path = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : '';
-                questions = [];
-
-                _loop = function _loop() {
-                  var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
-                      key = _Object$entries$_i[0],
-                      val = _Object$entries$_i[1];
-
-                  if (obj[key]) {
-                    if (obj[key].question) {
-                      questions.push({
-                        'name': key,
-                        'message': obj[key].question || key,
-                        'question': obj[key],
-                        'type': _this.mapType(obj[key].type),
-                        'path': path,
-                        'depends': obj[key].depends || [],
-                        'when': function when(currentAnswers) {
-                          var shouldAsk = true;
-
-                          if (obj[key].depends) {
-                            obj[key].depends.forEach(function (item) {
-                              if (_typeof(currentAnswers[item]) != undefined) {
-                                if (currentAnswers[item] == false) {
-                                  shouldAsk = false;
-                                }
-                              }
-                            });
-                          }
-
-                          return shouldAsk;
-                        }
-                      });
-                    }
-                  }
-
-                  if (_typeof(obj[key]) === 'object' && obj[key] !== null) {
-                    _this.traverseData(obj[key], path + '.' + key);
-                  }
-                };
-
-                for (_i = 0, _Object$entries = Object.entries(obj); _i < _Object$entries.length; _i++) {
-                  _loop();
-                }
+                questions = []; // for (const [key, val] of Object.entries(obj)) {
+                //     if(obj[key]) {
+                //         if(obj[key].question) {
+                //             questions.push({
+                //                 'name': key,
+                //                 'message': obj[key].question || key,
+                //                 'question': obj[key],
+                //                 'type': this.mapType(obj[key].type),
+                //                 'path': path,
+                //                 'depends': obj[key].depends || [],
+                //                 'when': (currentAnswers) => {
+                //                     let shouldAsk = true;
+                //                     if(obj[key].depends) {
+                //                         obj[key].depends.forEach(function(item) {
+                //                             if(typeof currentAnswers[item] != undefined) {
+                //                                 if(currentAnswers[item] == false) {
+                //                                     shouldAsk = false;
+                //                                 }
+                //                             }
+                //                         });
+                //                     }   
+                //                     return shouldAsk;
+                //                 }
+                //             });
+                //         }        
+                //     }
+                //     if (typeof obj[key] === 'object' &&  obj[key] !== null) {
+                //         this.traverseData(obj[key], path + '.' + key);
+                //     }
+                // }
 
                 return _context2.abrupt("return", obj);
 
-              case 5:
+              case 3:
               case "end":
                 return _context2.stop();
             }

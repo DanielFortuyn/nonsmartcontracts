@@ -53,6 +53,8 @@ var WebhookProvider = /*#__PURE__*/function () {
   _createClass(WebhookProvider, [{
     key: "inboundHandler",
     value: function inboundHandler(smoochMessage) {
+      console.log(smoochMessage.trigger);
+
       _pubsubJs["default"].publish(smoochMessage.trigger, {
         userId: this.getUserId(smoochMessage),
         message: smoochMessage

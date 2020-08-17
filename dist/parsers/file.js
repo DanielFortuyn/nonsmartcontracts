@@ -15,6 +15,10 @@ var _fs = _interopRequireDefault(require("fs"));
 
 var _yaml = _interopRequireDefault(require("yaml"));
 
+var _config = require("../providers/config.js");
+
+var _pubsubJs = _interopRequireDefault(require("pubsub-js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -27,76 +31,62 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-_dotenv["default"].config();
-
-var e = process.env;
+var e = _config.config.env;
 var split = e.SPLITTER || "#-!-#";
 
-var Agreement = /*#__PURE__*/function () {
-  function Agreement() {
-    _classCallCheck(this, Agreement);
-
-    this.data = {};
-    this.agreementText = '';
+var File = /*#__PURE__*/function () {
+  function File() {
+    _classCallCheck(this, File);
   }
 
-  _createClass(Agreement, [{
-    key: "loadPartials",
-    value: function loadPartials() {}
-  }, {
+  _createClass(File, [{
     key: "parseFile",
     value: function () {
-      var _parseFile = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(path) {
-        var file, parts;
+      var _parseFile = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(userId, path) {
+        var file, fileContents, parts;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                file = {};
+                _context.next = 3;
                 return _fs["default"].readFileSync(path, 'utf8');
 
-              case 2:
-                file = _context.sent;
-                parts = file.split(split);
-                console.log("SPLITTER", split, parts.length);
+              case 3:
+                fileContents = _context.sent;
+                parts = fileContents.split(split);
 
                 if (!(parts.length == 3)) {
                   _context.next = 9;
                   break;
                 }
 
-                this.data = this.parseData(parts[1]);
-                this.agreementText = parts[2];
-                return _context.abrupt("return", this.agreementText);
+                file.data = _yaml["default"].parse(parts[1]);
+                file.text = parts[2];
+                return _context.abrupt("return", file);
 
               case 9:
-                this.agreementText = file;
-                return _context.abrupt("return", this.agreementText);
+                file.text = file;
+                return _context.abrupt("return", file);
 
               case 11:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this);
+        }, _callee);
       }));
 
-      function parseFile(_x) {
+      function parseFile(_x, _x2) {
         return _parseFile.apply(this, arguments);
       }
 
       return parseFile;
     }()
-  }, {
-    key: "parseData",
-    value: function parseData(part) {
-      this.data = _yaml["default"].parse(part);
-      return this.data;
-    }
   }]);
 
-  return Agreement;
+  return File;
 }();
 
-var _default = Agreement;
+var _default = File;
 exports["default"] = _default;

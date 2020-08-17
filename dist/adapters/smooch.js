@@ -9,6 +9,8 @@ var _smoochCore = _interopRequireDefault(require("smooch-core"));
 
 var _dotenv = _interopRequireDefault(require("dotenv"));
 
+var _config = require("../providers/config.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -21,9 +23,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-_dotenv["default"].config();
-
-var e = process.env;
+var e = _config.config.env;
 
 var SmoochAdapter = /*#__PURE__*/function () {
   function SmoochAdapter() {

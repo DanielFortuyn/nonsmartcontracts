@@ -1,13 +1,20 @@
+import PubSub from 'pubsub-js'
+
 class DataProvider {
+    constructor() {
+        PubSub.subscribe('parser.found.data', this.fixData)
+    }
     
-    async fixData(dataObject) {
-        dataObject = this.fixMoment(dataObject);
+    async fixData(wrapper) {
+        let userId = wrapper.userId;
+        let dataObject = this.fixMoment(wrapper.data);
         // if('partij1' in dataObject && 'hierna' in dataObject.partij1) {
         //     this.setCaseData(dataObject.partij1.hierna, dataObject.partij1);
         // }
         // if('partij2' in dataObject && 'hierna' in dataObject.partij2) {
         //     this.setCaseData(dataObject.partij2.hierna, dataObject.partij2);
         // }
+
         return this.traverseData(dataObject);
     }
 
@@ -43,36 +50,36 @@ class DataProvider {
     }
     async traverseData(obj, path = '') {
         let questions = [];
-        for (const [key, val] of Object.entries(obj)) {
-            if(obj[key]) {
-                if(obj[key].question) {
-                    questions.push({
-                        'name': key,
-                        'message': obj[key].question || key,
-                        'question': obj[key],
-                        'type': this.mapType(obj[key].type),
-                        'path': path,
-                        'depends': obj[key].depends || [],
-                        'when': (currentAnswers) => {
-                            let shouldAsk = true;
-                            if(obj[key].depends) {
-                                obj[key].depends.forEach(function(item) {
-                                    if(typeof currentAnswers[item] != undefined) {
-                                        if(currentAnswers[item] == false) {
-                                            shouldAsk = false;
-                                        }
-                                    }
-                                });
-                            }   
-                            return shouldAsk;
-                        }
-                    });
-                }        
-            }
-            if (typeof obj[key] === 'object' &&  obj[key] !== null) {
-                this.traverseData(obj[key], path + '.' + key);
-            }
-        }
+        // for (const [key, val] of Object.entries(obj)) {
+        //     if(obj[key]) {
+        //         if(obj[key].question) {
+        //             questions.push({
+        //                 'name': key,
+        //                 'message': obj[key].question || key,
+        //                 'question': obj[key],
+        //                 'type': this.mapType(obj[key].type),
+        //                 'path': path,
+        //                 'depends': obj[key].depends || [],
+        //                 'when': (currentAnswers) => {
+        //                     let shouldAsk = true;
+        //                     if(obj[key].depends) {
+        //                         obj[key].depends.forEach(function(item) {
+        //                             if(typeof currentAnswers[item] != undefined) {
+        //                                 if(currentAnswers[item] == false) {
+        //                                     shouldAsk = false;
+        //                                 }
+        //                             }
+        //                         });
+        //                     }   
+        //                     return shouldAsk;
+        //                 }
+        //             });
+        //         }        
+        //     }
+        //     if (typeof obj[key] === 'object' &&  obj[key] !== null) {
+        //         this.traverseData(obj[key], path + '.' + key);
+        //     }
+        // }
         return obj;
     }
 

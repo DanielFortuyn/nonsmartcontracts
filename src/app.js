@@ -1,70 +1,72 @@
 import SmoochAdapter from './adapters/smooch.js'
 import AgreementProvider from './providers/agreement.js';
-import AgreementParser from './parsers/agreement.js';
+import FileParser  from './parsers/file.js';
 import dotenv from 'dotenv';
 import WebhookProvider from './providers/webhook.js';
 import PubSub from 'pubsub-js'
 import DataProvider from './providers/data.js';
 import OutputProvider from './providers/output.js';
-
-dotenv.config();
-let e = process.env;
-const agreementPath = 'agreements/';
-const split = e.SPLITTER || '#-!-#'
+import {config}  from './providers/config.js';
+import Agreement from './container/agreement.js';
 
 class Application {
     constructor() {
+        this.config = config;
+
         this.app = new WebhookProvider();
-        this.agreements = new AgreementProvider(agreementPath);
+        this.agreements = new AgreementProvider(config.env.AGREEMENT_PATH || './agreements');
         this.smooch = new SmoochAdapter();
         this.dataProvider = new DataProvider();
-
+        this.parser = new FileParser();
 
         this.userState = {};
-        this.userCurrentQuestion = {};
-
         this.registerHandlers();
     }
     registerHandlers() {
         PubSub.subscribe('conversation:start',(topic,data) => this.handleConversationStart(topic, data));
-        PubSub.subscribe('postback',(topic,data) => this.handlePostback(topic, data));
-        PubSub.subscribe('start.asking.questions',(topic,data) => this.startAskingQuestions(topic, data));
-        PubSub.subscribe('ready.to.ask', (topic,data) => this.keepAsking(topic,data));
-        PubSub.subscribe('ask.current.question', (topic, data) => this.askCurrentQuestion(data));
         PubSub.subscribe('message:appUser', (topic, data) => this.parseResponse(topic, data));
-        PubSub.subscribe('question.done', (topic, data) => this.questionDone(topic, data));
+        PubSub.subscribe('postback',(topic,data) => this.handlePostback(topic, data));
+        PubSub.subscribe('',(topic,data) => this.setAgreement(topic, data));
+        PubSub.subscribe('ready.to.ask', (topic,data) => this.readyToAsk(topic,data));
+        // PubSub.subscribe('ask.current.question', (topic, data) => this.askCurrentQuestion(data));
+        PubSub.subscribe('questions.done', (topic, data) => this.questionDone(topic, data));
     }
-
     handleConversationStart(topic, data) {
         this.resetUserState(data.userId);
         this.smooch.sendMessage(data.userId, 'Hallo! Welke overeenkomst wil je maken?', this.agreements.buttonsFromAgreements());
     }
-    handlePostback(topic, data) {
+    handlePostback(topic,data) {
+        this.setAgreement(data);
+    }
+    setAgreement(data) {
         this.resetUserState(data.userId);
         let pl = data.message.postbacks[0].action.payload;
         if(pl.includes('setAgreement')) {
-            let parts = pl.split(':');
-            this.smooch.sendMessage(data.userId, "Oei.. daar komen wel een paar vragen bij kijken. Laten we snel beginnen 🚀", []);
-            PubSub.publish('start.asking.questions',{
-                userId: data.userId,
-                agreement: parts[1],
-            });
+            let parts = pl.split(':')
+            // this.smooch.sendMessage(data.userId, "Oei.. daar komen wel een paar vragen bij kijken. Laten we snel beginnen 🚀", []);
+            this.initializeAgreement(data.userId, parts[1]);
         }
     }
 
-    questionDone(topic, userId) {
-        let md = ""
-        console.log("DONE", this.userState[userId]);
+    async initializeAgreement(userId,agreementName) {
+        let file = await this.parser.parseFile(userId, agreementName);
         this.output = new OutputProvider();
-        this.smooch.sendMessage(userId, "We zijn klaar en genereren je contract! 👍")
-        // let md = this.output.compileMd(userId, this.userState[userId]);
+        await this.output.init();
+        this.userState[userId] = new Agreement(agreementName, userId, file.text, file.data);
+        this.userState[userId].compiled = this.output.preProcess(this.userState[userId]);
+
+        PubSub.publish('ready.to.ask', userId);
+    }
+
+    questionDone(topic, userId) {
+        console.log("DONE", this.userState[userId]);
+        // this.smooch.sendMessage(userId, "We zijn klaar en genereren je contract! 👍")
+
+        let md = this.output.compileMd(userId, this.userState[userId]);
         let html = this.output.compileHtml(userId, this.userState[userId]);
-        let htmlUrl =  e.APPLICATION_URL + '/' + html;
-        let mdUrl = e.APPLICATION_URL + '/' + md;
-        
-
+        let htmlUrl =  this.config.env.APPLICATION_URL + '/' + html;
+        let mdUrl = this.config.env.APPLICATION_URL + '/' + md;
         this.smooch.sendMessage(userId, "Hier issie dan: \r\n\r\nOrigineel:"  + htmlUrl + "\r\n\r\nEditor:https://stackedit.io/viewer#!url=" + mdUrl);
-
     }
     async parseResponse(topic, data) {
         let uid = data.userId;
@@ -75,62 +77,27 @@ class Application {
         let response = data.message.messages[0].text;
         this.persistResponseInData(uid, response)
         //Unset zodat de volgende vraag gesteld kan worden
-        delete this.userCurrentQuestion[uid];
-        //Vraag de volgende vraag
         PubSub.publish('ready.to.ask', uid);
     }
     persistResponseInData(userId, response) {
         let finalPath = '';
-        if(this.userCurrentQuestion[userId].path != '') {
-            finalPath =  this.userCurrentQuestion[userId].path + "." + this.userCurrentQuestion[userId].key;
+        let agreement = this.userState[userId]; 
+        if(agreement.currentQuestion.path != '') {
+            finalPath =  agreement.currentQuestion.path + "." + agreement.currentQuestion.key;
             console.log("LOGGING:"  + finalPath);
         } else {
-            finalPath = this.userCurrentQuestion[userId].key;
+            finalPath = agreement.currentQuestion.key;
         }
-
-        this.dataProvider.set(this.userState[userId].data, finalPath, response)
+        agreement.provideAnswer(finalPath, response);
         return true;
     }
-    askCurrentQuestion(data) {
-        this.smooch.sendMessage(data.userId, data.question);
-    }
-    async keepAsking(topic, data) {
-        await this.traverseDataObject(data,this.userState[data].data, "")
-        if(typeof this.userCurrentQuestion[data] === 'undefined') {
-            PubSub.publish('question.done', data)
+    async readyToAsk(topic, data) {
+        let question = this.userState[data].fetchQuestion();
+        if(typeof question === 'undefined') {
+            PubSub.publish('questions.done', data)
+        }   else {
+            this.smooch.sendMessage(data, question.question);
         }
-    }
-    async traverseDataObject(userId, data, path) {
-        for (const [key, value] of Object.entries(data)) {
-            if(typeof this.userCurrentQuestion[userId] === 'undefined') {
-                if(typeof value === 'object' && value !== null) {
-                    let finalPath = (path == '') ? key : path + "." + key;
-                    this.traverseDataObject(userId, value, finalPath);
-                    if(typeof value.question !== 'undefined') {
-                        this.userCurrentQuestion[userId] = {
-                            question: value.question,
-                            key: key,
-                            path: path
-                        } 
-                        PubSub.publish('ask.current.question', {userId: userId, data: data, path:path, question: value.question});
-                    }
-                }
-            }
-        } 
-
-    }
-    async startAskingQuestions(topic,data) {
-        let outputProvider = new OutputProvider();
-        this.parser = new AgreementParser();
-        await this.parser.parseFile(data.agreement);
-        this.userState[data.userId] = {
-            data: await this.dataProvider.fixData(this.parser.data),
-            userId: data.userId,
-            agreement: data.agreement,
-            agreementText: this.parser.agreementText,
-            agreementTemplate: outputProvider.loadTemplate(this.parser.agreementText)
-        };
-        PubSub.publish('ready.to.ask', data.userId);
     }
     resetUserState(userId) {
         delete this.userState[userId];
