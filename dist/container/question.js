@@ -28,7 +28,6 @@ var e = _config.config.env;
 var Question = function Question(key, question, path) {
   _classCallCheck(this, Question);
 
-  console.log(question);
   this.question = question.question;
   this.key = key;
   this.path = path;

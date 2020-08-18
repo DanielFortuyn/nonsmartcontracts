@@ -22,7 +22,7 @@ class File {
             file.text = parts[2];
             return file;
         }        
-        file.text = file;
+        file.text = fileContents;
         return file
     }
 }

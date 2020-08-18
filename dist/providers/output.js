@@ -66,7 +66,6 @@ var Output = /*#__PURE__*/function () {
   function Output() {
     _classCallCheck(this, Output);
 
-    this.registerPartials();
     this.partials = {};
     this.dataProvider = new _data["default"]();
     this.parser = new _file["default"]();
@@ -339,7 +338,7 @@ var Output = /*#__PURE__*/function () {
       var compiled = _handlebars["default"].compile(data.text);
 
       var filename = this.getFileName(data.data) + '.html';
-      var template = compiled(data);
+      var template = compiled(data.data);
       var output = this.mergeFiles(template, data.data);
 
       _fs["default"].writeFileSync('output/' + filename, output);
@@ -354,7 +353,7 @@ var Output = /*#__PURE__*/function () {
       var compiled = _handlebars["default"].compile(data.text);
 
       var filename = this.getFileName(data) + '.md';
-      var markdown = compiled(data);
+      var markdown = compiled(data.data);
 
       _fs["default"].writeFileSync('output/' + filename, markdown);
 
@@ -412,7 +411,7 @@ var Output = /*#__PURE__*/function () {
                 parse = _context4.sent;
                 this.partials[name] = new _partial["default"](name, parse.text, parse.data);
 
-                _handlebars["default"].registerPartial(name, parse.text);
+                _handlebars["default"].registerPartial(name, this.partials[name].text);
 
               case 20:
                 _iteratorNormalCompletion2 = true;

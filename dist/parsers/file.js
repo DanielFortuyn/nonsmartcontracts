@@ -66,7 +66,7 @@ var File = /*#__PURE__*/function () {
                 return _context.abrupt("return", file);
 
               case 9:
-                file.text = file;
+                file.text = fileContents;
                 return _context.abrupt("return", file);
 
               case 11:

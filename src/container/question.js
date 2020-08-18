@@ -11,7 +11,6 @@ let e = config.env;
 
 class Question {
     constructor(key, question, path) {
-        console.log(question);
         this.question = question.question;
         this.key = key;
         this.path = path ;

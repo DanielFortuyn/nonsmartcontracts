@@ -14,7 +14,6 @@ const splittert = e.SPLITTER;
 
 class Output {
     constructor() {
-        this.registerPartials();
         this.partials = {}
         this.dataProvider = new DataProvider();
         this.parser = new FileParser();
@@ -90,7 +89,7 @@ class Output {
         this.registerHelpers();
         let compiled = Handlebars.compile(data.text);
         let filename = this.getFileName(data.data) +'.html';
-        let template = compiled(data);
+        let template = compiled(data.data);
         let output = this.mergeFiles(template, data.data)
         fs.writeFileSync('output/' + filename, output);
         return filename;
@@ -99,7 +98,7 @@ class Output {
         this.registerHelpers();
         let compiled = Handlebars.compile(data.text);
         let filename = this.getFileName(data) +'.md';
-        let markdown = compiled(data);
+        let markdown = compiled(data.data);
         fs.writeFileSync('output/'+ filename, markdown);
         return filename;
     }
@@ -114,7 +113,7 @@ class Output {
             let name = p.replace(partialPath,'').replace('.partial','');
             let parse = await this.parser.parseFile(name, p);
             this.partials[name] = new Partial(name, parse.text, parse.data);
-            Handlebars.registerPartial(name, parse.text);
+            Handlebars.registerPartial(name,this.partials[name].text);
         }        
     }
 }
