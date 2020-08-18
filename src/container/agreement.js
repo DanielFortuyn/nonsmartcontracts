@@ -1,4 +1,5 @@
 import Tpl from './tpl.js';
+import DataProvider from '../providers/data.js';
 
 class Agreement extends Tpl {
     constructor(name, userId, text, data) {
@@ -6,9 +7,13 @@ class Agreement extends Tpl {
         this.userId = userId;
         this.currentQuestion;
         this.compiled;
+        this.dataProvider = new DataProvider()
     }
     addQuestion(question) {
         this.questions.push(question);
+    }
+    addData(key, value) {
+        this.data[key] = value;
     }
     fetchQuestion() {
         this.currentQuestion = this.questions.shift()
@@ -28,6 +33,9 @@ class Agreement extends Tpl {
         while (str.length > 1)
             obj = obj[str.shift()];
         return obj[str.shift()] = val;
+    }
+    cleanData() { 
+        this.dataProvider.cleanAgreementData(this.data);
     }
 }
 export default Agreement;

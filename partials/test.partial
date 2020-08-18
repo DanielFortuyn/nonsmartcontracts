@@ -1,8 +1,6 @@
 Ondertekening is vrijwel altijd hetzelfde vandaar een partial hieronder...
 #-!-#
-plaats: 
-    question: In welke plaats is deze overeenkomst opgesteld?
-    default: Leiden
+plaats: Den Haag
 datum: moment('2020-07-12')
 #-!-#
 

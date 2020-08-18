@@ -8,14 +8,19 @@ eenzijdig:
     - Ja:true
     - Nee:false
 partij1:
+  hierna: verstrekker
   rechtspersoon:
     question: Is de verstrekken van informatie een rechtspersoon?
     type: bool
     options: 
         - Ja:true
         - Nee:false
+  naam:
+    question: Hoe heet de verstrekker?
 partij2:
   hierna: ontvanger
+  naam:
+    question: Hoe heet de ontvanger?
 projectOmschrijving: Het ontwikkelen van een prototype op het gebied van chat. 
 doelVerstrekking: Het verkennen van een samenwerking met DigitalFortune
 datum: moment()
@@ -29,7 +34,7 @@ plaats: Leiden
 ## eenzijdige informatieverschaffing
 
 ## Partijen
-De partijen, {{verstrekker}} (hierna: Verstrekker) en {{ontvanger}} (hierna: Ontvanger)
+De partijen, {{verstrekker.naam}} (hierna: Verstrekker) en {{ontvanger.naam}} (hierna: Ontvanger)
 
 komen het volgende overeen:
 

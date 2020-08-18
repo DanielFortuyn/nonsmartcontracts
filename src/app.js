@@ -59,8 +59,8 @@ class Application {
     }
 
     questionDone(topic, userId) {
-        console.log("DONE", this.userState[userId]);
-        // this.smooch.sendMessage(userId, "We zijn klaar en genereren je contract! 👍")
+        this.userState[userId].cleanData();
+        this.smooch.sendMessage(userId, "We zijn klaar en genereren je contract! 👍")
 
         let md = this.output.compileMd(userId, this.userState[userId]);
         let html = this.output.compileHtml(userId, this.userState[userId]);
@@ -84,7 +84,6 @@ class Application {
         let agreement = this.userState[userId]; 
         if(agreement.currentQuestion.path != '') {
             finalPath =  agreement.currentQuestion.path + "." + agreement.currentQuestion.key;
-            console.log("LOGGING:"  + finalPath);
         } else {
             finalPath = agreement.currentQuestion.key;
         }
