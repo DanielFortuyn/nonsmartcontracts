@@ -1,13 +1,26 @@
 Een geheimhoudingsovereenkomst verplicht een ontvanger bepaalde informatie geheim te houden.
 #-!-#
+eenzijdig:
+  question: Is dit een eenzijdige overeenkomst?
+  type: bool
+  default: true
+  list: 
+    - Ja:true
+    - Nee:false
 partij1:
-  naam:
-    question: Hoe heet de verstrekker van informatie?
-  plaats:
-    question: Waar is de verstrekker gevestigd?
   hierna: verstrekker
+  rechtspersoon:
+    question: Is de verstrekken van informatie een rechtspersoon?
+    type: bool
+    options: 
+        - Ja:true
+        - Nee:false
+  naam:
+    question: Hoe heet de verstrekker?
 partij2:
   hierna: ontvanger
+  naam:
+    question: Hoe heet de ontvanger?
 projectOmschrijving: Het ontwikkelen van een prototype op het gebied van chat. 
 doelVerstrekking: Het verkennen van een samenwerking met DigitalFortune
 datum: moment()
@@ -21,7 +34,7 @@ plaats: Leiden
 ## eenzijdige informatieverschaffing
 
 ## Partijen
-De partijen, {{verstrekker}} (hierna: Verstrekker) en {{ontvanger}} (hierna: Ontvanger)
+De partijen, {{verstrekker.naam}} (hierna: Verstrekker) en {{ontvanger.naam}} (hierna: Ontvanger)
 
 komen het volgende overeen:
 
@@ -32,8 +45,7 @@ Ontvanger stemt erin toe dat hij door Verstrekker, wordt voorzien van vertrouwel
 
 Het doel van het verstrekken van deze informatie is:
 
-{{doelVersrekking}} 
-
+{{doelVerstrekking}} 
 
 ## Artikel {{count article}}. Geheimhouding
 Ontvanger zal alle voornoemde informatie die hem door Verstrekker of door haar aangewezen personen is of zal worden verstrekt behandelen als vertrouwelijke informatie die hij derhalve voor derden strikt geheim zal houden.

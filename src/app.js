@@ -67,17 +67,20 @@ class Application {
         let htmlUrl =  this.config.env.APPLICATION_URL + '/' + html;
         let mdUrl = this.config.env.APPLICATION_URL + '/' + md;
         this.smooch.sendMessage(userId, "Hier issie dan: \r\n\r\nOrigineel:"  + htmlUrl + "\r\n\r\nEditor:https://stackedit.io/viewer#!url=" + mdUrl);
+        delete this.userState[userId];
     }
     async parseResponse(topic, data) {
         let uid = data.userId;
-        // console.log("gotresponse", topic, data);
-        // await this.smooch.sendMessage(uid, "Bedankt voor het antwoord, we gaan door met de volgende!");
+        if(this.userState[uid]) {
+            // console.log("gotresponse", topic, data);
+            // await this.smooch.sendMessage(uid, "Bedankt voor het antwoord, we gaan door met de volgende!");
 
-        //Zet het antwoord in de data
-        let response = data.message.messages[0].text;
-        this.persistResponseInData(uid, response)
-        //Unset zodat de volgende vraag gesteld kan worden
-        PubSub.publish('ready.to.ask', uid);
+            //Zet het antwoord in de data
+            let response = data.message.messages[0].text;
+            this.persistResponseInData(uid, response)
+            //Unset zodat de volgende vraag gesteld kan worden
+            PubSub.publish('ready.to.ask', uid);
+        }
     }
     persistResponseInData(userId, response) {
         let finalPath = '';

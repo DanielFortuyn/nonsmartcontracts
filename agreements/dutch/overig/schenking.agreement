@@ -1,0 +1,99 @@
+Een Schenkingsakte regelt het schenken van geld aan een persoon. 
+#-!-#
+partij1:
+    naam:
+        question: Wat is de naam van degene die het bedrag schenkt?
+    hierna: schenker
+partij2:
+    naam: 
+        question: Hoe heet de ontvanger van het bedrag?
+    hierna: ontvanger
+#-!-#
+# Schenkingsakte hoge vrijstelling
+Hierbij verklaart
+…………………………………………….[naam], ……………………………………………………………..[adres],
+…………………………………………..[postcode, woonplaats], …………………………………[BSN], hierna te
+noemen ‘schenker’
+dat hij aan
+…………………………………………….[naam], ……………………………………………………………..[adres],
+…………………………………………..[postcode, woonplaats], …………………………………[BSN], hierna te
+noemen ‘begunstigde’
+een schenking doet groot
+€ …………………………………….(zegge: ……………………………………………………………………….. euro)
+## Artikel {{count article}}
+[als de schenking wordt gedaan voor de aankoop van een woning hoofdverblijf, voor
+afkoop van erfpacht, opstal of beklemming met betrekking tot de eigen woning
+hoofdverblijf of voor aflossing van de hypotheek (eigenwoningschuld) op de eigenwoning
+hoofdverblijf:]
+De schenking wordt gedaan onder de opschortende voorwaarde dat de begunstigde een
+eigen woning heeft verworven als bedoeld in art. 3.111, lid 1 of 3 Wet
+inkomstenbelasting 2001, een recht van erfpacht, opstal of beklemming met betrekking
+tot die woning heeft afgekocht dan wel een eigenwoningschuld als bedoeld in art. 3.119a
+Wet inkomstenbelasting 2001, of een deel daarvan, heeft afgelost.
+[als de schenking wordt gedaan voor kwijtschelding van een familiebanklening die fiscaal
+gezien wordt als eigenwoningschuld:]
+De schenking wordt niet aan begunstigde overgemaakt, maar wordt door de schenker in
+mindering gebracht op het bedrag dat begunstigde van schenker geleend heeft.
+Betreffende lening is een eigenwoningschuld van begunstigde als bedoeld in art. 3.119a
+Wet inkomstenbelasting 2001.
+[als de schenking wordt gedaan voor verbetering of onderhoud van de eigen woning
+hoofdverblijf:]
+De schenking wordt gedaan onder de ontbindende voorwaarde dat de schenking vervalt
+voor zover het geschonken bedrag niet in het jaar van de schenking of in de twee daarop
+volgende kalenderjaren is besteed aan verbetering of onderhoud van een eigen woning
+als bedoeld in art 3.111 lid 1 of 3 Wet inkomstenbelasting 2001 van de begunstigde.
+[als de schenking wordt gedaan voor aflossing van de restschuld van een vervreemde
+eigen woning hoofdverblijf:]
+De schenking wordt gedaan onder de opschortende voorwaarde dat begunstigde met het
+gehele bedrag van de schenking een schuld heeft afgelost die hij had op het moment
+direct voorafgaand aan een vervreemding van een eigen woning voor zover deze schuld
+
+heeft geleid tot een negatief vervreemdingssaldo eigen woning als bedoeld in artikel
+3.119aa Wet inkomstenbelasting 2001, of een deel van die restschuld, heeft afgelost.
+[als de schenking wordt gedaan voor kwijtschelding van een familiebanklening die fiscaal
+gezien wordt als restschuld van een vervreemde eigen woning hoofdverblijf:]
+De schenking wordt niet aan begunstigde overgemaakt, maar wordt door de schenker in
+mindering gebracht op het bedrag dat begunstigde van schenker geleend heeft.
+Betreffende lening is een restschuld van begunstigde. Met restschuld wordt bedoeld een
+schuld die begunstigde had op het moment direct voorafgaand aan een vervreemding
+van een eigen woning voor zover deze schuld heeft geleid tot een negatief
+vervreemdingssaldo eigen woning als bedoeld in artikel 3.119aa Wet inkomstenbelasting
+2001.
+## Artikel {{count article}}
+[Alleen opnemen als de schenking niet plaatsvindt in de vorm van kwijtschelding]
+Met schriftelijke bescheiden kan worden aangetoond dat het bedrag van de schenking
+daadwerkelijk door de schenker is betaald en door de begunstigde is aangewend voor
+een van de doeleinden, genoemd in Artikel 1.
+## Artikel {{count article}}
+[Optioneel: Neem dit artikel op als u schenkt aan één van uw erfgenamen en u wilt dat te
+zijner tijd bij de verdeling van uw nalatenschap over uw erfgenamen rekening wordt
+gehouden met deze schenking. De schenking wordt dan gezien als een al uitbetaald
+gedeelte van het erfdeel dat toekomt aan de begunstigde.]
+De schenking is niet vrij van inbreng.
+## Artikel {{count article}}
+[Optioneel: Neem dit artikel op als u niet wilt dat de schenking bij eventuele
+echtscheiding of einde van een geregistreerd partnerschap van begunstigde moet worden
+verdeeld tussen begunstigde en zijn/haar partner]
+In het geval het huwelijk of geregistreerd partnerschap van de begunstigde niet eindigt
+door diens overlijden, zal het geschonken bedrag, alsmede de vruchten daarvan en de
+goederen die in de plaats zijn gekomen van hetgeen door deze schenking is verkregen
+en/of de vruchten daarvan, niet vallen in enige gemeenschap van goederen waarin de
+begunstigde is gehuwd of mocht huwen en niet vallen in een gemeenschap op grond van
+een geregistreerd partnerschap, noch betrokken worden in enig deelgenootschap of
+verrekenbeding terzake van een huwelijk of geregistreerd partnerschap.
+## Artikel {{count article}}
+Schenker en begunstigde zullen ervoor zorg dragen dat uiterlijk binnen twee maand na
+afloop van het kalenderjaar waarin de schenking is gedaan melding wordt gedaan bij de
+Belastingdienst van deze schenking door het doen van aangifte.
+
+## Artikel {{count article}}
+[Alleen opnemen bij kwijtschelding van een familiebanklening waarvoor annuïtaire
+aflossingsplicht geldt]
+Begunstigde zal binnen een maand na afloop van het kalenderjaar de gewijzigde
+gegevens van de lening doorgeven aan de Belastingdienst met het formulier Opgaaf
+lening eigen woning dat te vinden is op www.belastingdienst.nl.
+…………………………………………………….
+Datum en Handtekening schenker
+…………………………………………………….
+Datum en Handtekening begunstigde
+…………………………………………………….
