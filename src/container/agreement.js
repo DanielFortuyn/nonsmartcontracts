@@ -34,6 +34,11 @@ class Agreement extends Tpl {
             obj = obj[str.shift()];
         return obj[str.shift()] = val;
     }
+    get (obj, desc) {
+        var arr = desc.split('.');
+        while (arr.length && (obj = obj[arr.shift()]));
+        return obj;
+    }
     cleanData() { 
         this.dataProvider.cleanAgreementData(this.data);
     }

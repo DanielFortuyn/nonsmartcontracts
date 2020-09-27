@@ -1,35 +1,29 @@
-Een Schenkingsakte regelt het schenken van geld aan een persoon. 
+Een Testakte, waarmee je de functionaliteit kunt testen. 
 #-!-#
-woning:
-    question: Waar is deze schenking voor bedoeld?
+partijen:
+    question: Nemen we de partijen op in deze overeenkomst
     options:
-        - Aanschaf woning
-        - Eigenwoningschuld (fiscaal)
-        - Verbetering hoofdverblijf
-        - Aflossing restschuld
-        - Familliebank aflossing restschuld
-kwijtschelding:
-    question: Gaat het hier om een kwijtschelding?
-    depends: woning
+        - Ja
+        - Nee
+partijenCheck:
+    question: Heb je net de partijen opgenomen?
+    depends: partijen
     options:
         - Ja
         - Nee
 kwijtscheldingBelastingdienst:
     depends: kwijtschelding
-bedrag:
-    question: Om welk bedrag gaat het?
-bedragVolUit: 
-    question: Hoe schrijf je dit bedrag vol uit?
-
+    question: Gaat het hier om een kwijtschelding?
 #-!-#
 # Schenkingsakte hoge vrijstelling
+{{#if partijen}}
 Hierbij verklaart {{partij1.naam}}., {{partij1.adres}}, {{partij1.postcode}}, {{partij1.woonplaats}}, {{partij1.bsn}}, hierna te noemen ‘schenker’
 
 dat hij aan
 
 {{partij2.naam}}., {{partij2.adres}},
 {{partij2.postcode}}, {{partij2.woonplaats}}, {{partij2.bsn}}, hierna te noemen ‘begunstigde’ een schenking doet groot € {{bedrag}}. (zegge:{{bedragVolUit}})
-
+{{/if}}
 ## Artikel {{count article}}
 {{#switch woning}}
 {{#case 'Aanschaf woning'}}
@@ -76,5 +70,3 @@ Begunstigde zal binnen een maand na afloop van het kalenderjaar de gewijzigde ge
 
 {{> toepasselijkRecht}}
 {{> ondertekening }}
-
-{{> partijen}}

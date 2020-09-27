@@ -1,0 +1,11 @@
+Template om de partijen uit te vragen
+#-!-#
+partij1:
+    naam:
+        question: Wat is de naam van degene die het bedrag schenkt?
+    hierna: schenker
+partij2:
+    naam: 
+        question: Hoe heet de ontvanger van het bedrag?
+    hierna: ontvanger
+#-!-#

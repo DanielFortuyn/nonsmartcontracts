@@ -26,14 +26,13 @@ class Application {
         PubSub.subscribe('conversation:start',(topic,data) => this.handleConversationStart(topic, data));
         PubSub.subscribe('message:appUser', (topic, data) => this.parseResponse(topic, data));
         PubSub.subscribe('postback',(topic,data) => this.handlePostback(topic, data));
-        PubSub.subscribe('',(topic,data) => this.setAgreement(topic, data));
         PubSub.subscribe('ready.to.ask', (topic,data) => this.readyToAsk(topic,data));
         // PubSub.subscribe('ask.current.question', (topic, data) => this.askCurrentQuestion(data));
         PubSub.subscribe('questions.done', (topic, data) => this.questionDone(topic, data));
     }
     handleConversationStart(topic, data) {
         this.resetUserState(data.userId);
-        this.smooch.sendMessage(data.userId, 'Hallo! Welke overeenkomst wil je maken?', this.agreements.buttonsFromAgreements());
+        this.smooch.sendMessage(data.userId, "Hallo! Welke overeenkomst wil je maken? Als je wilt stoppen, kun je altijd 'stop' zeggen. \r\n\r\nOok kun je alle modelovereenkomsten bekijken op:  https://github.com/DanielFortuyn/nonsmartcontracts ", this.agreements.buttonsFromAgreements());
     }
     handlePostback(topic,data) {
         this.setAgreement(data);
@@ -66,38 +65,76 @@ class Application {
         let html = this.output.compileHtml(userId, this.userState[userId]);
         let htmlUrl =  this.config.env.APPLICATION_URL + '/' + html;
         let mdUrl = this.config.env.APPLICATION_URL + '/' + md;
-        this.smooch.sendMessage(userId, "Hier issie dan: \r\n\r\nOrigineel:"  + htmlUrl + "\r\n\r\nEditor:https://stackedit.io/viewer#!url=" + mdUrl);
+        let modelUrl = "https://github.com/DanielFortuyn/nonsmartcontracts/tree/chat/agreements/dutch/" + this.userState[userId].name;
+        this.smooch.sendMessage(userId, "Je kunt je contract bekijken: \r\nPrinten:\r\n"  + htmlUrl + "\r\n\r\nEditor: https://stackedit.io/viewer#!url=" + mdUrl + "\r\nModel:\r\n" + modelUrl);
         delete this.userState[userId];
+    }
+    checkForStop(data) {
+        if(data.message.messages[0].text == 'stop') {
+            console.log('conversation stop');
+            PubSub.publish('conversation:start', data);
+        }
     }
     async parseResponse(topic, data) {
         let uid = data.userId;
+        this.checkForStop(data);
         if(this.userState[uid]) {
             // console.log("gotresponse", topic, data);
             // await this.smooch.sendMessage(uid, "Bedankt voor het antwoord, we gaan door met de volgende!");
-
             //Zet het antwoord in de data
-            let response = data.message.messages[0].text;
+            let response = (data.message.messages[0].payload) ? data.message.messages[0].payload : data.message.messages[0].text;
+            console.log(response);
+            if(response == 'Ja' ||  response == 'ja') {
+                response = true;
+            }
+            if(response == 'Nee' || response == 'nee') {
+                response = false;
+            }
+
             this.persistResponseInData(uid, response)
             //Unset zodat de volgende vraag gesteld kan worden
             PubSub.publish('ready.to.ask', uid);
         }
     }
     persistResponseInData(userId, response) {
-        let finalPath = '';
         let agreement = this.userState[userId]; 
-        if(agreement.currentQuestion.path != '') {
-            finalPath =  agreement.currentQuestion.path + "." + agreement.currentQuestion.key;
-        } else {
-            finalPath = agreement.currentQuestion.key;
-        }
-        agreement.provideAnswer(finalPath, response);
+        let path = this.createPath(agreement.currentQuestion.path, agreement.currentQuestion.key);
+        agreement.provideAnswer(path, response);
         return true;
     }
+    createPath(path, key) {
+        let finalPath = '';
+        if(path != '') {
+            finalPath = path + '.' + key;
+        } else {
+            finalPath = key;
+        }
+        return finalPath;
+    }
     async readyToAsk(topic, data) {
-        let question = this.userState[data].fetchQuestion();
+        let agreement = this.userState[data];
+        let question = agreement.fetchQuestion();
         if(typeof question === 'undefined') {
             PubSub.publish('questions.done', data)
         }   else {
+            //Compare question with depends
+            if(question.depends) {
+                console.log("DEPENDS VALUE", agreement.get(agreement.data, question.depends));
+                if(!agreement.get(agreement.data, question.depends)) {
+                    console.log('SKIPPING');
+                    PubSub.publish('ready.to.ask', data)
+                } else {
+                    this.sendQuestion(data, question)
+                }
+            } else {
+                this.sendQuestion(data, question)
+            }
+        }
+    }
+    sendQuestion(data, question) {
+        if(question.options.length != 0) {
+            this.smooch.sendMessage(data, question.question, question.options);
+        } else {
             this.smooch.sendMessage(data, question.question);
         }
     }

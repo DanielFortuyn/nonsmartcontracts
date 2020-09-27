@@ -16,6 +16,7 @@ class Tpl {
                 let finalPath = (path == '') ? key : path + "." + key;
                 this.traverseDataObject(value, finalPath);
                 if (typeof value.question !== 'undefined') {
+                    console.log('adding question', value);
                     this.questions.push(new Question(key, value, path));
                 }
             }

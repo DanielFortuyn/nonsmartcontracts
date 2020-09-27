@@ -15,6 +15,25 @@ class Question {
         this.key = key;
         this.path = path ;
         this.default = question.default;
+        this.depends = question.depends || false;
+        this.options = [];
+        this.parseOptions(question.options);
     }
+
+    parseOptions(options) {
+        let self = this;
+        if(typeof options != 'undefined') {
+        options.forEach(function(item, index) {
+            self.options.push(
+                {
+                    type:'reply',
+                    text: item,
+                    index: index,
+                    payload: item
+                }
+            );
+        });
+        }
+    }   
 }
 export default Question;
