@@ -1,0 +1,263 @@
+Dit template is geschikt voor een informele vereniging.
+
+#-!-#
+vereniging:
+  naam: Re&uuml;nisten vereniging DigitalFortune
+  adres: Breestraat 12
+  postcode: 2333BW 
+  plaats: Leiden
+  voorzitter: Digital Fortune
+  penningmeester: Digital Fortune
+  secretaris: Jaap Jaapsen
+  start: moment('2021-01-01')
+  datum: moment('now') 
+  doel: Faciliteren van de verdieping en verbreding van de inter-persoonlijke band onder oud leden
+  hoe: Het organiseren van activiteiten voor oud leden van DigitalFortune
+#-!-#
+
+# STATUTEN VAN {{vereniging.naam}}
+
+## Artikel {{count article}}: Naam, zetel en rechtsbevoegdheid 
+
+De naam van de vereniging is: {{vereniging.naam}}
+
+{{vereniging.naam}} is gevestigd te {{vereniging.plaats}}
+
+{{vereniging.naam}} bezit een beperkte rechtsbevoegdheid, wordt ook wel een informele vereniging benoemd. De bestuurders hoofdelijk aansprakelijk zijn. 
+
+{{vereniging.naam}} kan geen registergoederen verkrijgen en geen erfgenaam zijn. 
+
+{{vereniging.naam}} is niet ingeschreven bij de Kamer van Koophandel.
+
+## Artikel {{count article}}: Duur
+
+De vereniging is opgericht voor onbepaalde tijd. 
+
+{{vereniging.naam}} is opgericht op {{vereniging.start}}
+
+Het boekjaar van de vereniging loopt van 1 januari tot en met 31 december. Het verenigingsjaar valt samen met het verenigingjaar. 
+
+## Artikel {{count article}}: Doel 
+
+Het doel van de vereniging betreft: {{vereniging.doel}}
+
+{{vereniging.naam}} streeft na dit doel te bereiken door: {{vereniging.hoe}}
+
+{{vereniging.naam}} heeft geen winstoogmerk. 
+
+## Artikel {{count article}}: Lidmaatschap
+
+De vereniging accepteert natuurlijke en rechtspersonen als leden.
+
+Een ieder kan als lid worden toegelaten door een verzoek in te dienen bij het bestuur. Het bestuur zal een besluit nemen over de toelating. 
+
+Als het bestuur de toelating weigert, kan de algemene ledenvergadering een beslissing nemen over de toelating, waarbij een lid alsnog toegelaten kan worden. 
+
+De leden van een vereniging zijn de personen die de doelstelling van de vereniging erkennen en meewerken aan de activiteiten die voortkomen uit de vereniging. 
+
+Er wordt door het bestuur of de secretaris een ledenregister bijgehouden.
+
+Het lidmaatschap is niet overdraagbaar. 
+
+## Artikel {{count article}}: Schorsing
+
+Als een lid in strijd handelt met zijn lidmaatschapsverplichtingen, kan hij voor ten hoogste 1 maand geschorst worden door het bestuur. De verplichtingen behorende bij het lidmaatschap blijven in stand gedurende de periode dat een lid is geschorst. Tijdens de schorsing kan het lid zijn rechten niet uitoefenen.
+
+Het bestuur is bevoegd een lid te schorsen voor een periode van ten hoogste drie maanden, als een lid:
+
+bij herhaling in strijd handelt met zijn lidmaatschapsverplichtingen
+
+door handelingen of gedragingen het belang van de vereniging in ernstige mate heeft geschaad
+
+## Artikel {{count article}}: Rechten en verplichtingen 
+
+De leden zijn gebonden aan:
+
+de reglementen en de statuten van de vereniging
+
+de besluiten van het bestuur en de algemene ledenvergadering 
+
+de plicht om zovaak mogelijk vergaderingen bij te wonen
+
+de verplichtingen die de vereniging aangaat, die anderen namens de vereniging aangaan of die uit het lidmaatschap voortvloeien
+
+## Artikel {{count article}}: Einde lidmaatschap 
+
+Het lidmaatschap eindigt:
+
+door de dood van het lid
+
+door opzegging
+
+door ontzetting
+
+Opzegging van het lidmaatschap door een lid kan alleen plaatsvinden tegen het einde van een verenigingsjaar, met inachtneming van een opzegtermijn van vier weken. Dat gebeurt schriftelijk, waarbij de secretaris verplicht is de ontvangst van de opzegging binnen acht dagen te bevestigen. Als de opzegging niet uiterlijk vier weken voor het einde van het verenigingsjaar heeft plaatsgevonden, dan loopt het lidmaatschap door tot het einde van het volgende verenigingjaar, tenzij het bestuur anders beslist. Als het lidmaatschap binnen het verenigingsjaar eindigt, blijft de bijdrage van het lid over het desbetreffende jaar verschuldigd, tenzij het bestuur anders besluit.
+
+Het lidmaatschap eindigt na opzegging:
+
+als het lid met een geldige reden niet het lidmaatschap kan voortzetten
+
+als de rechten van het lid beperkt zijn of verplichtingen verzwaard zijn, hem is bekend geworden of medegedeeld, in welk geval het besluit alsdan niet op hem van toepassing is
+Een lid kan niet door opzegging de toepasselijkheid van besluiten die opgenomen zijn in de statuten uitsluiten.
+
+Opzegging met directe ingang door de vereniging kan plaatsvinden:
+
+als het lid zich in strijd met de statuten handelt
+
+als van de vereniging niet kan worden geëist dat de lidmaatschap wordt voortgezet
+
+als het lid zich niet meer aan de statuten en reglementen houdt 
+Ontzetting uit het lidmaatschap kan alleen:
+
+wanneer een lid meerdere malen in strijd handelt of heeft gehandeld met de statuten 
+
+wanneer een lid een reglement of besluit van de vereniging zonder gegronde reden niet nakomt
+
+Het betrokken lid kan na een maand tegen het besluit van de opzegging of ontzetting in beroep gaan bij de algemene ledenvergadering. Een bevestiging van het besluit behoeft ten minste tweederde van de geldig uitgebrachte stemmen.
+
+Als het lidmaatschap binnen het verenigingsjaar eindigt, blijft de bijdrage van het lid over het desbetreffende jaar verschuldigd, tenzij het bestuur anders besluit.  
+
+
+## Artikel {{count article}}: Geldmiddelen
+ 
+De vereniging haalt haar geldmiddelen uit:
+
+- sponsoring
+- inkomsten voor beurzen en activiteiten
+- contributies
+
+Jaarlijks wordt door de algemene ledenvergadering het bedrag van de contributie bepaald die door elk lid betaald moet worden.
+
+
+## Artikel {{count article}}: Bestuur
+
+Het aantal bestuursleden wordt bepaald door de algemene ledenvergadering. Het bestuur bestaat ten minste uit vier personen. Het bestuur bestaat in ieder geval uit een voorzitter, een secretaris en een penningmeester aangevuld met 1 of meerdere bestuursleden. 
+
+De voorzitter wordt benoemd door de algemene ledenvergadering. De secretaris en penningmeester worden benoemd door het bestuur. 
+
+Het bestuur blijft bestaan als er minder dan drie leden zijn, zolang er maar minimaal twee bestuursleden zijn.  Een voorzitter gekozen van buiten het ledenbestand, wordt na aanvaarding
+
+De voorzitter wordt benoemd uit één van de leden. 
+
+De voorzitter kan ontslagen of geschorst worden door de algemene ledenvergadering. Hiervoor is een tweederde meerderheid van rechtsgeldig uitgebrachte stemmen nodig. De bestuurders mogen ontslag nemen met inachtneming van een opzegtermijn van 1 maand.
+
+Het bestuur is na goedkeuring van de algemene ledenvergadering bevoegd tot het aangaan van overeenkomsten. Het bestuur is bij uitsluiting bevoegd om het dagelijkse beleid van de vereniging te bepalen. 
+
+Het bestuur bepaalt de agenda van de vergadering en zit de vergadering voor. 
+
+## Artikel {{count article}}: Vertegenwoordiging
+
+Het bestuur vertegenwoordigt de vereniging, voor zover uit de wet niets anders voortvloeit. In geval van afwezigheid van de voorzitter, secretaris en de penningmeester is het bestuur bevoegd om een volmacht te verlenen aan een lid, als vervangende vertegenwoordiger. 
+
+Een wettelijk toegestane of voorgeschreven beperking of voorwaarde van de vertegenwoordigingsbevoegdheid kan alleen door de vereniging worden ingeroepen. 
+
+## Artikel {{count article}}: Algemene ledenvergadering
+
+Aan de algemene ledenvergadering komen binnen de vereniging alle bevoegdheden toe, die niet door de wet of de statuten aan andere organen zijn opgedragen. 
+
+Jaarlijks wordt uiterlijk zes maanden na afloop van het boekjaar een algemene ledenvergadering gehouden. Buitengewone algemene ledenvergaderingen worden gehouden zo dikwijls het bestuur dit wenselijk acht. 
+
+De algemene ledenvergadering wordt bijeengeroepen door het bestuur, met inachtneming van een termijn van ten minste 14 dagen. De bijeenroeping gebeurt door een mededeling per e-mail aan alle leden met gelijktijdige vermelding van de agenda.
+
+Bij een bestuurswisseling of een verzoek tot een statutenwijziging wordt ook een algemene ledenvergadering gehouden met minstens eentiende van het aantal leden. 
+
+De agenda van de jaarvergadering bevat onder meer: 
+
+- vaststelling van de notulen van de vorige algemene ledenvergadering
+- financieel verslag over het afgelopen boekjaar
+- decharge van het bestuur en penningmeester 
+- vaststelling van de contributies
+- vaststelling van de begroting
+- benoeming bestuursleden 
+- rondvraag 
+
+## Artikel {{count article}}: Besluitvorming
+
+Elk lid heeft toegang tot de jaarlijkse algemene ledenvergadering.
+
+Leden die geschorst zijn, mogen niet deelnemen aan de algemene ledenvergadering, tenzij zij bij de algemene ledenvergadering beroep hebben ingesteld om toch de vergadering bij te wonen.
+
+Ieder stemgerechtigd lid heeft één stem.
+
+Elk lid is gerechtigd om zijn stem uit te brengen door een ander te machtigen. Dit moet schriftelijk worden goedgekeurd door het bestuur. De gemachtigde kan in totaal niet meer dan twee stemmen uitbrengen. 
+
+Het stemrecht in geval van besluiten waarbij de vereniging aan bepaalde personen, anders dan in hun hoedanigheid van lid, rechten toekent of verplichtingen niet meer hoeft na te komen, wordt aan die personen en aan hun echtgenoot en bloedverwanten in de rechte lijn ontzegd.
+
+Stemming over zaken geschiedt mondeling dan wel schriftelijk indien dit noodzakelijk wordt geacht.
+
+Als niemand een meerderheid heeft behaald, wordt er een tweede stemronde gehouden. Die wordt gehouden tussen de mensen die de meeste stemmen hebben gekregen en de meerderheid van de stemmen die in de tweede stemronde zijn uitgebracht. 
+
+Ongeldige stemmen zijn stemmen die op geen enkele manier blanco of op welk dan ook ondertekend zijn, dan wel iets anders aangeven dan in stemming is gebracht of andere namen hebben dan van de personen over wie wordt gestemd.
+
+
+## Artikel {{count article}}: Leiding en notulen
+
+Het bestuur leidt de algemene ledenvergadering en draagt zorg voor notulen
+
+## Artikel {{count article}}: Statutenwijziging
+
+Het bestuur is na instemming van de algemene ledenvergadering gemachtigd de statuten te wijzigen
+
+## Artikel {{count article}}: Ontbinding en vereffening
+
+Bij de oproeping van de in dit artikel bedoelde algemene ledenvergaderingen moet worden medegedeeld, dat ter vergadering zal worden voorgesteld de vereniging te ontbinden. De vereniging wordt ontbonden door een daartoe strekkend besluit van de algemene ledenvergadering, genomen met ten minste tweederde van het aantal uitgebrachte stemmen in een vergadering waarin ten minste drievierde van de leden aanwezig of vertegenwoordigd is.
+
+Indien geen drievierde van de leden aanwezig of vertegenwoordigd is, wordt binnen vier weken op een andere datum een tweede vergadering bijeengeroepen en gehouden, waarin over het voorstel, zoals dat in de vorige vergadering aan de orde is geweest, ongeacht het aantal aanwezige of vertegenwoordigde leden, een besluit kan worden genomen, mits met een meerderheid van ten minste tweederde van de uitgebrachte geldige stemmen.
+
+Nadat er is besloten om de vereniging te ontbinden, is de algemene ledenvergadering bevoegd zitting hebbende bestuursleden te ontslaan met gelijktijdige benoeming van één of meer vereffenaars.
+
+Indien geen vereffenaars worden benoemd bij een besluit tot ontbinding, is vereffening door het bestuur overeenkomstig de wet. In de documenten en aankondigingen uitgegeven door de vereniging, moeten de namen van de leden van het bestuur worden toegevoegd.
+
+Nadat de vereniging is ontbonden, is het noodzakelijk om haar activa op te heffen. Bij een besluit tot ontbinding wordt de bestemming van een eventueel batig saldo bepaald, terwijl de algemene ledenvergadering tevens één of meer bewaarders aanwijst.
+
+Nadat de vereniging is ontbonden moeten de boeken en bescheiden door de bewaarder(s) worden bewaard gedurende 7 jaar na afloop van de vereffening.
+
+## Artikel {{count article}}: Persoonsgegevens
+
+Recht op inzage 
+Een lid heeft recht op inzage van zijn persoonsgegevens, daarbij moet je hem laten weten: 
+
+of je zijn persoonsgegevens gebruikt 
+wat de doel is van de vereniging bij het gebruik van de gegevens 
+aan wie je de gegevens nog meer hebt verstrekt
+wat de herkomst van de gegevens is (indien de herkomst bekend is)
+Recht op correctie en verwijdering
+Een lid mag een wijziging aanvragen van zijn persoonsgegevens als:
+
+die feitelijk onjuist zijn
+die onvolledig zijn of niet ter zake doen voor het doel waarvoor ze zijn verzameld
+die op een of andere manier in strijd met de wet worden gebruikt
+Recht om vergeten te worden
+Het lid heeft het recht om te eisen dat de vereniging de verwijdering doorgeeft aan alle organisaties die deze gegevens van de vereniging hebben gekregen. De vereniging moet vervolgens ook aan het lid kunnen bewijzen dat deze gegevens verwijderd zijn.
+Recht op dataportabiliteit
+De leden hebben het recht om (onder bepaalde voorwaarden) hun persoonsgegevens in een standaard formaat op te vragen. 
+
+## Artikel {{count article}}: Huishoudelijk reglement
+
+In de algemene ledenvergadering wordt er een huishoudelijk reglement vastgesteld. Het huishoudelijk reglement wordt vastgesteld door de algemene vergadering en mag niet in strijd zijn met de wet of met deze statuten. Wijzigingen in het huishoudelijk reglement zijn mogelijk door de algemene vergadering, waarbij het bestuur of ten minste tien leden een voorstel doen.
+
+## Artikel {{count article}}: Slotbepaling
+
+In alle gevallen waarin door de statuten, reglementen of wet niet is voorzien, beslist het bestuur. In afwijking van het gestelde in artikel 9.1 bestaat het bestuur voor de eerste maal uit de volgende personen:
+
+Voorzitter: {{vereniging.voorzitter}}
+
+Secretaris: {{vereniging.secretaris}}
+
+Penningmeester: {{vereniging.penningmeester}}
+
+Het adres van de vereniging is: {{adres}}
+ 
+Aldus opgemaakt in tweevoud op {{datum}} te {{plaats}},
+
+Ondertekening
+
+| Naam | Handtekening | 
+|-------------|-------------|
+| Voorzitter | {{vereniging.voorzitter}} | 
+|Handtekening:| `_______________________________________`|
+| Secretaris | {{vereniging.secretaris}} | 
+|Handtekening:| `_______________________________________`|
+| Penningmeester | {{vereniging.penningmeester}} | 
+|Handtekening:| `_______________________________________`|
+ 
