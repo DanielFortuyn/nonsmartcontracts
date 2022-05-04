@@ -7,6 +7,9 @@
   "author": "Daniel Fortuyn <daniel@fortuyn.nl>",
   "license": "GNU GPLv3",
   "private": false,
+  "scripts": {
+    "main": "node src/index.js"
+  },
   "dependencies": {
     "fuzzy": "^0.1.3",
     "handlebars": "^4.7.6",
