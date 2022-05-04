@@ -75,9 +75,18 @@ let helpers = {
             return article++;
         });
 
+        Handlebars.registerHelper('currentCount', function (count) {
+            return article-1;
+        });
+
         Handlebars.registerHelper('subcount', function (count) {
             return subcount++;
         });
+
+        Handlebars.registerHelper('currentSubcount', function (count) {
+            return subcount;
+        });
+
     },
     registerPartials: async function() {
         const partialPath = 'partials/';

@@ -33,37 +33,40 @@ datum: moment('2022-05-04')
 
 en
 
-{{uitlener.naam}}, geboren op {{ uitlener.geboorteDatum}}, wonende aan de {{uitlener.adres}} te {{uitlener.woonplaats}}, hierna: Uitlener, 
+{{uitlener.naam}} (kvk: {{uitlener.kvk}}), gevestigd aan {{uitlener.adres}} te {{uitlener.woonplaats}}, hierna: Uitlener, 
 
 komen een leningsovereenkomst overeen met de volgende voorwaarden:
 
-## {{count article}}. Hoofdsom
+## Artikel {{count article}}. Hoofdsom
 De Uitlener stelt aan de Lener ter beschikking een bedrag van &euro; {{bedrag}} zegge {{bedragInTekst}}, hierna te noemen de Hoofdsom. De terbeschikkingstelling gebeurt door bijboeking per op {{beginDatum}} op rekening de bewindvoerder van de Lener aangehouden te {{uitlener.woonplaats}}
 
-## {{count article}}. Doel van lening
+## Artikel {{count article}}. Doel van lening
 De lening is bedoeld voor {{doel}} en zal uitsluitend hiertoe worden aangewend.
 
-## {{count article}}. Rente
-### {{subcount subcount}}
+## Artikel {{count article}}. Rente
+### {{currentCount article}}.{{subcount subcount}} Berekening
 De rente die over een periode verschuldigd is, wordt berekend over de in die periode nog uitstaande Hoofdsom. Voor het berekenen van de rente geldt dat een jaar 365 dagen heeft.
-### {{subcount subcount}}
+### {{currentCount article}}.{{subcount subcount}} Percentage
 De rente is hetzelfde voor de hele looptijd van de lening en bedraagt {{rentePercentage}} procent per jaar.
 
-## {{count article}}. Rentebetalingen
+## Artikel {{count article}}. Rentebetalingen
 Voldoening voor de eerste van de maand laat de verschuldigdheid van de rente over de dan lopende volledige maand onverlet. De over een  maand verschuldigde rente die in overeenstemming met deze overeenkomst nog niet te hoeft te worden betaald, wordt per de eerste van de volgende maand bij de hoofdsom gevoegd, en wordt daarmee rentedragend.
 
-## {{count article}}. Looptijd en terugbetaling van hoofdsom
+## Artikel {{count article}}. Looptijd en terugbetaling van hoofdsom
 De schuld (hoofdsom en rente) dient te zijn afgelost op {{eindDatum}} Aflossing van de uitstaande hoofdsom gebeurt door betaling van {{aantalTermijnen}} gelijke termijnen van &euro; {{termijnAflossing}} en dient plaats te vinden per de eerste dag van een maand. De grootte van de eindtermijn is € {{laatsteTermijnAflossing}} De eerste termijn is verschuldigd op de eerste dag van de maand {{eersteAflossingDatum}}
 
-## {{count article}}. Betaling
-De Lener zal alle te betalen bedragen voldoen zonder enige inhouding, compensatie of kosten voor de uitlener per de eerste van de maand.
-
+## Artikel {{count article}}. Betaling
+### {{currentCount article}}.{{subcount subcount}} Arbeidsrelatie
+De Lener en de Uitlener hebben een reeds bestaande arbeidsrelatie. 
+### {{currentCount article}}.{{subcount subcount}} Betaling uit nettoloon
+De betaling van de termijn bedragen geschiedt door het maandelijkse verminderen van het nettoloon met het overeengekomen termijn bedrag.
+### {{currentCount article}}.{{subcount subcount}} Te laat betaalde bedragen
 Over te laat betaalde bedragen is rente verschuldigd tegen het in artikel 3 genoemde rentepercentage. De uitlener is bevoegd per direct betaling daarvan te verlangen. 
 
-## {{count article}}. Opzegging
-De lening kan niet worden opgezegd behalve zoals bepaald in artikel 8 en artikel 10.
+## Artikel {{count article}}. Opzegging
+De lening kan niet worden opgezegd behalve zoals bepaald in artikel Opeisbaarheid en artikel Vervroegd aflossen.
 
-## {{count article}}. Opeisbaarheid
+## Artikel {{count article}}. Opeisbaarheid
 Alle uit hoofde van de lening verschuldigde bedragen kunnen met onmiddellijke ingang worden opgeëist, en de lening geldt bij opeising als opgezegd indien:
 - De Lener achter is met betalen en veertien dagen na sommatie per aangetekend schrijven nog niet heeft betaald wat hij diende te betalen.
 - De Lener in strijd handelt met deze overeenkomst, anders dan de plicht tot betaling van rente en aflossing, en het verzuim niet is te herstellen.
@@ -71,12 +74,15 @@ Alle uit hoofde van de lening verschuldigde bedragen kunnen met onmiddellijke in
 - Er met betrekking tot de Lener een aanvraag is gedaan, al dan niet door de Lener zelf, voor faillissement, surseance van betaling of toepasselijkheid van de schuldsaneringsregeling. 
 - De Lener overleden is, ten laste van hem executoriaal beslag is gelegd, hij niet langer in Nederland woont of wanneer aannemelijk is respectievelijk uitlener goede reden heeft te veronderstellen dat een van deze omstandigheden zich zal voordoen.
 
-## {{count article}}. Vervroegd aflossen
-De Lener is bevoegd om vervroegd aflossingen te doen per de eerste van enige maand en wel: Onbeperkt
+## Artikel {{count article}}. Beëindiging arbeidsovereenkomst
+Bij beeindiging van de arbeidsovereenkomst om welke reden dan ook kan de lening met onmiddellijke ingang opgeëist worden.
 
-Vervroegde aflossingen dienen duizend euro of een veelvoud daarvan te bedragen. Vervroegde aflossingen dienen veertien dagen van tevoren door de Lener schriftelijk te worden aangekondigd aan de uitlener. De Lener zal met de aankondiging een herberekening meesturen van de nieuwe rentetermijn en indien van toepassing de nieuwe aflossingstermijn.
+## Artikel {{count article}}. Vervroegd aflossen
+De Lener is bevoegd om vervroegd aflossingen te doen per de eerste van de maand.
 
-## {{count article}}. Andere kredieten
+Vervroegde aflossingen dienen honderd euro of een veelvoud daarvan te bedragen. Vervroegde aflossingen dienen veertien dagen van tevoren door de Lener schriftelijk te worden aangekondigd aan de Uitlener. De Lener zal met de aankondiging een herberekening meesturen van de nieuwe rentetermijn en indien van toepassing de nieuwe aflossingstermijn.
+
+## Artikel {{count article}}. Andere kredieten
 De Lener zal zonder schriftelijke toestemming van uitlener geen krediet- of geldleningsovereenkomsten met anderen aangaan na het sluiten van deze overeenkomst. Indien de Uitlener toestemming weigert dan is de Lener bevoegd de lening direct per de eerste van de volgende maand en volledig af te lossen. 
 
 {{> toepasselijkRecht}}
